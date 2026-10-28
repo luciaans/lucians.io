@@ -17,7 +17,7 @@ import {
     type Prose,
     type Shot,
     type StoryBlock,
-} from "../../data/projects";
+} from "../../../data/projects";
 import { finishTransition, isTransitioning, pushWithTransition } from "../../../lib/view-transition";
 
 /** One centred frame holds everything, so text and media share both edges. */
@@ -165,7 +165,7 @@ export default function ProjectPage({ slug }: { slug: string }) {
                     {project.link && (
                         <p className="mt-4 text-[14px]">
                             <InlineLink href={project.link}>
-                                {new URL(project.link).hostname.replace(/^www\./, "")}
+                                {project.linkLabel ?? new URL(project.link).hostname.replace(/^www\./, "")}
                             </InlineLink>
                         </p>
                     )}

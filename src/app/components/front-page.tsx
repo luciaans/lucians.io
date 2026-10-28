@@ -1,4 +1,6 @@
 "use client";
+import type { ReactNode } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useGlobal } from "../../context-providers/global-provider";
 import Cited from "./citation";
@@ -7,19 +9,20 @@ import type { PondStats } from "./koi-pond/koi-pond";
 import { SOURCES } from "../data/sources";
 
 const SOCIALS = [
-    { label: "github", href: "https://github.com/Dao-Ho" },
-    { label: "linkedin", href: "https://www.linkedin.com/in/dao-ho/" },
-    { label: "x", href: "https://x.com/daoho04" },
+    { label: "github", href: "https://github.com/luciaans" }, // TODO: ganti dengan link GitHub kamu
+    { label: "discord", href: "https://discord.com/users/867236993683816458" },
+    { label: "instagram", href: "https://www.instagram.com/kikiinyaa/" },
 ];
 
 const UNDERLINE =
     "underline decoration-[color-mix(in_srgb,var(--foreground-color)_35%,transparent)] decoration-1 underline-offset-[5px] outline-none transition-opacity duration-150 hover:decoration-foreground focus-visible:decoration-foreground";
 
+// TODO: Replace with your personal 2-line tagline
 const QuoteLines = () => (
     <>
-        in an ocean of gluttony,
+        turning complex data into clarity,
         <br />
-        cast a fine net
+        crafting thoughtful software
         <span
             aria-hidden="true"
             className="ml-1 inline-block h-[1em] w-[0.55em] translate-y-[0.15em] animate-blink bg-foreground motion-reduce:animate-none"
@@ -92,39 +95,31 @@ const desktopPage = ({ isLight, stats }: { isLight: boolean; stats: PondStats })
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
             >
-                <h1>Xin chào, I'm Dao.</h1>
+                <h1>Hi, I&apos;m Lucians.</h1>
                 <p>
-                    Software Engineer @{" "}
-                    <Cited source="googleIncoming" isLight={isLight}>
-                        Google
-                    </Cited>
-                    , passionate about building the future.
-                </p>
-                <p>
-                    Before that,{" "}
-                    <Cited source="google" isLight={isLight}>
-                        Google
+                    An{" "}
+                    <Cited source="unmuhpnk" isLight={isLight}>
+                        Informatics Engineering
                     </Cited>{" "}
-                    (intern),{" "}
-                    <Cited source="agency" isLight={isLight}>
-                        Agency
-                    </Cited>
-                    , and a few{" "}
-                    <Cited source="startups" isLight={isLight}>
-                        early-stage startups
+                    graduate focused on Data Analytics and Software Engineering.
+                </p>
+                <p>
+                    Previously interned at{" "}
+                    <Cited source="diskominfo" isLight={isLight}>
+                        Diskominfo Kota Pontianak
+                    </Cited>{" "}
+                    and worked on{" "}
+                    <Cited source="governmentProjects" isLight={isLight}>
+                        government projects
                     </Cited>
                     .
                 </p>
                 <p>
-                    Currently, building @{" "}
-                    <Cited source="generate" isLight={isLight}>
-                        Generate
-                    </Cited>
-                    , researching @{" "}
-                    <Cited source="parcs" isLight={isLight}>
-                        PARCS Lab
-                    </Cited>
-                    .
+                    Currently exploring AI, emerging technologies, and building{" "}
+                    <Cited source="webGIS" isLight={isLight}>
+                        web GIS
+                    </Cited>{" "}
+                    and data-driven applications.
                 </p>
                 <Socials className="mt-[1.5vh]" />
             </motion.div>
@@ -132,12 +127,22 @@ const desktopPage = ({ isLight, stats }: { isLight: boolean; stats: PondStats })
     );
 };
 
-// Hover cards need a pointer, so on touch the mentions link straight to each site.
-const MobileLink = ({ source, children }: { source: string; children: React.ReactNode }) => (
-    <a href={SOURCES[source].href} target="_blank" rel="noopener noreferrer" className={UNDERLINE}>
-        {children}
-    </a>
-);
+// Hover cards need a pointer, so on touch the mentions link straight to each site/route.
+const MobileLink = ({ source, children }: { source: string; children: ReactNode }) => {
+    const src = SOURCES[source];
+    if (src?.href?.startsWith("/")) {
+        return (
+            <Link href={src.href} className={UNDERLINE}>
+                {children}
+            </Link>
+        );
+    }
+    return (
+        <a href={src?.href ?? "#"} target="_blank" rel="noopener noreferrer" className={UNDERLINE}>
+            {children}
+        </a>
+    );
+};
 
 const mobilePage = () => {
     return (
@@ -162,18 +167,18 @@ const mobilePage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
             >
-                <h1>Xin chào, I&apos;m Dao.</h1>
+                <h1>Hi, I&apos;m Lucians.</h1>
                 <p>
-                    Software Engineer @ <MobileLink source="googleIncoming">Google</MobileLink>, passionate about
-                    building the future.
+                    An <MobileLink source="unmuhpnk">Informatics Engineering</MobileLink> graduate focused on Data
+                    Analytics and Software Engineering.
                 </p>
                 <p>
-                    Before that, <MobileLink source="google">Google</MobileLink> (intern),{" "}
-                    <MobileLink source="agency">Agency</MobileLink>, and a few early-stage startups.
+                    Previously interned at <MobileLink source="diskominfo">Diskominfo Kota Pontianak</MobileLink> and
+                    worked on <MobileLink source="governmentProjects">government projects</MobileLink>.
                 </p>
                 <p>
-                    Currently, building @ <MobileLink source="generate">Generate</MobileLink>, researching @{" "}
-                    <MobileLink source="parcs">PARCS Lab</MobileLink>.
+                    Currently exploring AI, emerging technologies, and building{" "}
+                    <MobileLink source="webGIS">web GIS</MobileLink> and data-driven applications.
                 </p>
                 <Socials className="mt-2" />
             </motion.div>

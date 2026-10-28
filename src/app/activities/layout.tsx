@@ -1,0 +1,9 @@
+import type { ReactNode } from "react";
+
+export const metadata = {
+    title: "Activities",
+};
+
+export default function ActivitiesLayout({ children }: { children: ReactNode }) {
+    return <>{children}</>;
+}

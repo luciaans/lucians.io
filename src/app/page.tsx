@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useGlobal } from "../context-providers/global-provider";
 
 import MobileNav from "./components/mobile-nav";

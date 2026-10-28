@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -52,7 +52,7 @@ const Mark = ({
 );
 
 /** An underlined @-mention whose hover card reads source / role / one line; clicking opens the source. */
-const Cited = ({ source, children, isLight }: { source: string; children: React.ReactNode; isLight: boolean }) => {
+const Cited = ({ source, children, isLight }: { source: string; children: ReactNode; isLight: boolean }) => {
     const src = SOURCES[source];
     const router = useRouter();
     const [open, setOpen] = useState(false);

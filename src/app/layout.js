@@ -30,8 +30,14 @@ const fontGeistMono = localFont({
 });
 
 export const metadata = {
-    title: "Dao Ho",
-    description: "expression of self",
+    icons: {
+        icon: "/favicon-transparent.gif",
+    },
+    title: {
+        default: "Lucians",
+        template: "%s",
+    },
+    description: "Lucians — Data Analyst & Software Engineer",
 };
 
 export default function RootLayout({ children }) {

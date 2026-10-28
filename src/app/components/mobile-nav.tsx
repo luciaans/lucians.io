@@ -1,21 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ExternalLink, Github } from "lucide-react";
 import ThemeIcon from "./theme-icon";
 
 const navLinks = [
-    { label: "Home", href: "/" },
+    { label: "Luci", href: "/" },
     { label: "Projects", href: "/projects" },
-    { label: "Gallery", href: "/gallery" },
-    { label: "Blog", href: "/blog" },
+    { label: "Credentials", href: "/credentials" },
+    { label: "Activities", href: "/activities" },
 ];
 
 const secondaryLinks = [
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/dao-ho/" },
-    { label: "GitHub", href: "https://github.com/Dao-Ho" },
+    { label: "GitHub", href: "https://github.com/luciaans" },
+    // TODO: Add LinkedIn when provided
+    // TODO: Add Email when provided
 ];
 
 interface MobileNavProps {
@@ -42,7 +43,7 @@ export default function MobileNav({ isLight, toggleTheme }: MobileNavProps) {
                     style={{ background: pillBg, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
                 >
                     <span className="font-inter font-normal text-20 tracking-normal" style={{ color: fg }}>
-                        Dao Ho
+                        Lucians
                     </span>
                     <div className="relative" style={{ width: "5vw", height: "5vw" }}>
                         <AnimatePresence mode="wait">

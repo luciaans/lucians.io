@@ -1,6 +1,7 @@
 "use client";
 
 import posthog from "posthog-js";
+import type { ReactNode } from "react";
 
 const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN;
 
@@ -14,6 +15,6 @@ if (typeof window !== "undefined" && posthogKey) {
     });
 }
 
-export function PostHogInitializer({ children }: { children: React.ReactNode }) {
+export function PostHogInitializer({ children }: { children: ReactNode }) {
     return <>{children}</>;
 }

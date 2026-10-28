@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useLayoutEffect, useEffect } from "react";
+import { createContext, useContext, useState, useLayoutEffect, useEffect, type ReactNode } from "react";
 
 interface GlobalContextType {
     isMobile: boolean | null;
@@ -18,7 +18,7 @@ export const MOBILE_QUERY = `(max-width: ${MOBILE_BREAKPOINT_PX - 1}px)`;
 
 const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
 
-export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
+export const GlobalProvider = ({ children }: { children: ReactNode }) => {
     const [isMobile, setIsMobile] = useState<boolean | null>(null);
     const [isLight, setIsLight] = useState<boolean>(false);
 

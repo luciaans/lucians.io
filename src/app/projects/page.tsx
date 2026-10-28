@@ -9,7 +9,7 @@ import { useGlobal } from "../../context-providers/global-provider";
 import MobileNav from "../components/mobile-nav";
 import TopNav from "../components/top-nav";
 import Container from "../components/container";
-import { isExternal, LAST_PROJECT_KEY, projectHref, projects, projectsByDate, type Project } from "../data/projects";
+import { isExternal, LAST_PROJECT_KEY, projectHref, projects, projectsByDate, type Project } from "../../data/projects";
 
 const GLIDE = 0.18; // share of the remaining distance the strip covers each frame when scrolled with a wheel
 
@@ -116,7 +116,7 @@ function StripTile({ project, priority }: { project: Project; priority: boolean 
         <>
             <div
                 data-slug={project.slug}
-                className="relative aspect-[3/2] h-[min(62vh,42rem)] overflow-hidden bg-[color-mix(in_srgb,var(--foreground-color)_6%,transparent)]"
+                className="relative aspect-video h-[min(62vh,42rem)] overflow-hidden bg-[color-mix(in_srgb,var(--foreground-color)_6%,transparent)]"
             >
                 <Image
                     src={project.thumb}
@@ -187,7 +187,7 @@ function MobileLayout({ isLight, toggleTheme }: { isLight: boolean; toggleTheme:
                 {projects.map((project, i) => (
                     <article key={project.index} className="flex flex-col pb-[16vw]">
                         {/* Image */}
-                        <div className="relative w-full rounded-2xl overflow-hidden" style={{ height: "65vw" }}>
+                        <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
                             <Image
                                 src={project.thumb}
                                 alt={project.name}
