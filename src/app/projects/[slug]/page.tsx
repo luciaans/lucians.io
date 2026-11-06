@@ -13,8 +13,6 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
     if (!project?.page) return {};
     const { tagline, share } = project.page;
     return {
-        // Share images need an absolute URL, so this page resolves them against the live site.
-        metadataBase: new URL("https://luciaans.github.io"),
         title: project.name,
         description: tagline,
         openGraph: {

@@ -30,14 +30,43 @@ const fontGeistMono = localFont({
 });
 
 export const metadata = {
+    metadataBase: new URL("https://lucians.my.id"),
+    applicationName: "Lucians",
+    authors: [{ name: "Lucians", url: "https://lucians.my.id" }],
+    creator: "Lucians",
+    publisher: "Lucians",
     icons: {
         icon: "/favicon-transparent.gif",
     },
     title: {
-        default: "Lucians",
-        template: "%s",
+        default: "Lucians — Data Analyst & Software Engineer",
+        template: "%s — Lucians",
     },
-    description: "Lucians — Data Analyst & Software Engineer",
+    description:
+        "Portofolio Lucians — Informatics Engineering graduate focused on data analytics, software engineering, and web GIS.",
+    openGraph: {
+        type: "website",
+        url: "https://lucians.my.id/",
+        siteName: "Lucians",
+        title: "Lucians — Data Analyst & Software Engineer",
+        description:
+            "Turning complex data into clarity, crafting thoughtful software. Explore my work in data analytics, software engineering, and web GIS.",
+        locale: "en_US",
+        images: [
+            {
+                url: "/opengraph-image",
+                width: 1200,
+                height: 630,
+                alt: "Lucians — Data Analyst & Software Engineer",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Lucians — Data Analyst & Software Engineer",
+        description: "Turning complex data into clarity, crafting thoughtful software.",
+        images: ["/opengraph-image"],
+    },
 };
 
 export default function RootLayout({ children }) {
