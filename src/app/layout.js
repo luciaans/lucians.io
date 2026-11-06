@@ -48,9 +48,8 @@ export const metadata = {
         type: "website",
         url: "https://lucians.my.id/",
         siteName: "Lucians",
-        title: "Lucians — Data Analyst & Software Engineer",
-        description:
-            "Turning complex data into clarity, crafting thoughtful software. Explore my work in data analytics, software engineering, and web GIS.",
+        title: "Portfolio & Selected Work",
+        description: "Selected projects in data analytics, software engineering, and web GIS.",
         locale: "en_US",
         images: [
             {
@@ -63,8 +62,8 @@ export const metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Lucians — Data Analyst & Software Engineer",
-        description: "Turning complex data into clarity, crafting thoughtful software.",
+        title: "Portfolio & Selected Work",
+        description: "Selected projects in data analytics, software engineering, and web GIS.",
         images: ["/opengraph-image"],
     },
 };
