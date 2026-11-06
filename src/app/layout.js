@@ -39,11 +39,11 @@ export const metadata = {
         icon: "/favicon-transparent.gif",
     },
     title: {
-        default: "Lucians — Data Analyst & Software Engineer",
-        template: "%s — Lucians",
+        default: "Lucians | Data Analyst & Software Engineer",
+        template: "%s | Lucians",
     },
     description:
-        "Portofolio Lucians — Informatics Engineering graduate focused on data analytics, software engineering, and web GIS.",
+        "Portofolio Lucians | Informatics Engineering graduate focused on data analytics, software engineering, and web GIS.",
     openGraph: {
         type: "website",
         url: "https://lucians.my.id/",
@@ -56,7 +56,7 @@ export const metadata = {
                 url: "/opengraph-image",
                 width: 1200,
                 height: 630,
-                alt: "Lucians — Data Analyst & Software Engineer",
+                alt: "Lucians | Data Analyst & Software Engineer",
             },
         ],
     },
