@@ -34,11 +34,11 @@ export default function MobileNav({ isLight, toggleTheme }: MobileNavProps) {
     const pathname = usePathname();
 
     const getPillLabel = (path: string) => {
-        if (!path || path === "/") return "luci";
-        if (path.startsWith("/projects")) return "projects";
-        if (path.startsWith("/credentials")) return "credentials";
-        if (path.startsWith("/activities")) return "activities";
-        return "luci";
+        if (!path || path === "/") return "Luci";
+        if (path.startsWith("/projects")) return "Projects";
+        if (path.startsWith("/credentials")) return "Credentials";
+        if (path.startsWith("/activities")) return "Activities";
+        return "Luci";
     };
 
     const currentLabel = getPillLabel(pathname);
@@ -78,10 +78,7 @@ export default function MobileNav({ isLight, toggleTheme }: MobileNavProps) {
                     className="flex min-h-12 w-full cursor-pointer items-center justify-between rounded-full px-5 py-3 sm:px-6"
                     style={{ background: pillBg, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
                 >
-                    <span
-                        className="font-inter text-[18px] font-normal tracking-normal lowercase"
-                        style={{ color: fg }}
-                    >
+                    <span className="font-inter text-[18px] font-normal tracking-normal" style={{ color: fg }}>
                         {currentLabel}
                     </span>
                     <span className="relative flex h-6 w-6 items-center justify-center">
