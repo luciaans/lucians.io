@@ -6,6 +6,7 @@ import ThemeIcon from "./theme-icon";
 
 const LINKS = [
     { label: "luci", href: "/" },
+    { label: "about", href: "/about" },
     { label: "projects", href: "/projects" },
     { label: "credentials", href: "/credentials" },
     { label: "activities", href: "/activities" },

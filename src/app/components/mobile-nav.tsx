@@ -12,6 +12,7 @@ import ThemeIcon from "./theme-icon";
 
 const navLinks = [
     { label: "Luci", href: "/" },
+    { label: "About", href: "/about" },
     { label: "Projects", href: "/projects" },
     { label: "Credentials", href: "/credentials" },
     { label: "Activities", href: "/activities" },
@@ -35,6 +36,7 @@ export default function MobileNav({ isLight, toggleTheme }: MobileNavProps) {
 
     const getPillLabel = (path: string) => {
         if (!path || path === "/") return "Luci";
+        if (path.startsWith("/about")) return "About";
         if (path.startsWith("/projects")) return "Projects";
         if (path.startsWith("/credentials")) return "Credentials";
         if (path.startsWith("/activities")) return "Activities";

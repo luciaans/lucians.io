@@ -1,0 +1,273 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { useGlobal } from "../../context-providers/global-provider";
+import MobileNav from "../components/mobile-nav";
+import TopNav from "../components/top-nav";
+import Container from "../components/container";
+import { GithubLogoIcon } from "@phosphor-icons/react/dist/csr/GithubLogo";
+import { LinkedinLogoIcon } from "@phosphor-icons/react/dist/csr/LinkedinLogo";
+import { DiscordLogoIcon } from "@phosphor-icons/react/dist/csr/DiscordLogo";
+import { InstagramLogoIcon } from "@phosphor-icons/react/dist/csr/InstagramLogo";
+import { MapPinIcon } from "@phosphor-icons/react/dist/csr/MapPin";
+import { GraduationCapIcon } from "@phosphor-icons/react/dist/csr/GraduationCap";
+import { BriefcaseIcon } from "@phosphor-icons/react/dist/csr/Briefcase";
+import { TerminalIcon } from "@phosphor-icons/react/dist/csr/Terminal";
+import { CodeIcon } from "@phosphor-icons/react/dist/csr/Code";
+import { SparkleIcon } from "@phosphor-icons/react/dist/csr/Sparkle";
+
+const SOCIALS = [
+    { label: "GitHub", href: "https://github.com/luciaans", icon: GithubLogoIcon },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/kikialqadrie/", icon: LinkedinLogoIcon },
+    { label: "Discord", href: "https://discord.com/users/867236993683816458", icon: DiscordLogoIcon },
+    { label: "Instagram", href: "https://www.instagram.com/kikiinyaa/", icon: InstagramLogoIcon },
+];
+
+const SKILLS = [
+    {
+        category: "Languages",
+        items: ["Rust", "TypeScript", "JavaScript", "Python", "SQL", "HTML / CSS"],
+    },
+    {
+        category: "Frameworks & Web",
+        items: ["Next.js", "React", "Node.js", "Express", "Tailwind CSS"],
+    },
+    {
+        category: "Data & Systems",
+        items: ["PostgreSQL", "Supabase", "GeoJSON", "Leaflet.js", "Data Analytics"],
+    },
+    {
+        category: "Tools & Workflow",
+        items: ["Git", "GitHub", "Linux", "Docker", "Vite", "Vercel"],
+    },
+];
+
+const PRINCIPLES = [
+    {
+        number: "01",
+        title: "Reliability First",
+        description:
+            "Write predictable, robust, and maintainable software. Systems should handle failure gracefully and stay rock solid under real-world usage.",
+    },
+    {
+        number: "02",
+        title: "Curiosity & Lower-Level Depth",
+        description:
+            "Currently deep-diving into Rust and systems programming to master memory management, concurrency, and performance from the bottom up.",
+    },
+    {
+        number: "03",
+        title: "Purpose-Driven Engineering",
+        description:
+            "From public-sector statistical dashboards to registered interactive digital media, the priority is delivering tangible utility and clean developer experience.",
+    },
+];
+
+export default function AboutPage() {
+    const { isLight, isMobile, toggleTheme } = useGlobal();
+    const [imgSrc, setImgSrc] = useState("/profile.jpg");
+
+    if (isMobile === null) return null;
+
+    return (
+        <div className={`min-h-screen w-full bg-background text-foreground ${isLight ? "light" : "dark"}`}>
+            {isMobile ? (
+                <MobileNav isLight={isLight} toggleTheme={toggleTheme} />
+            ) : (
+                <TopNav isLight={isLight} toggleTheme={toggleTheme} />
+            )}
+
+            <Container as="main" className="flex flex-col gap-14 pb-24 pt-28 lg:gap-20 lg:pt-36">
+                {/* Header */}
+                <header className="flex flex-col gap-4 font-geistMono">
+                    <h1 className="sr-only">About Me</h1>
+                    <p className="text-[14px] lowercase leading-relaxed tracking-[0.02em] opacity-60">
+                        about me.
+                        <span
+                            aria-hidden="true"
+                            className="ml-1 inline-block h-[1em] w-[0.55em] translate-y-[0.15em] animate-blink bg-foreground motion-reduce:animate-none"
+                        />
+                    </p>
+                    <p className="max-w-[38rem] font-geistSans text-[16px] leading-[1.6] opacity-80 [text-wrap:pretty]">
+                        Software engineer and Informatics Engineering graduate focused on systems development, Rust, and
+                        building reliable digital tools.
+                    </p>
+                </header>
+
+                {/* Hero profile grid */}
+                <section aria-label="Profile and bio" className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
+                    {/* Left Column: Profile Card */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="flex flex-col gap-5 lg:col-span-5"
+                    >
+                        <div className="group relative aspect-square w-full max-w-[22rem] overflow-hidden rounded-[8px] border border-[color-mix(in_srgb,var(--foreground-color)_12%,transparent)] bg-[color-mix(in_srgb,var(--foreground-color)_4%,transparent)]">
+                            <Image
+                                src={imgSrc}
+                                alt="Lucians (Kiki Alqadrie)"
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 350px"
+                                quality={90}
+                                priority
+                                className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                                onError={() => setImgSrc("/profile-placeholder.svg")}
+                            />
+                            {/* Subtle overlay gradient */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-[rgb(0_0_0/0.4)] via-transparent to-transparent opacity-60" />
+                            <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between font-geistMono text-[12px] text-white">
+                                <span className="rounded bg-black/60 px-2 py-1 backdrop-blur-sm">@luciaans</span>
+                                <span className="flex items-center gap-1.5 rounded bg-black/60 px-2 py-1 backdrop-blur-sm">
+                                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                                    Available
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* Quick meta details */}
+                        <div className="flex flex-col gap-2.5 font-geistMono text-[13px] opacity-85">
+                            <div className="flex items-center gap-2">
+                                <MapPinIcon size={16} weight="bold" className="shrink-0 opacity-60" />
+                                <span>Pontianak, Indonesia (GMT+7)</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <GraduationCapIcon size={16} weight="bold" className="shrink-0 opacity-60" />
+                                <span>Informatics Engineering (S.Kom) · GPA 3.83</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <BriefcaseIcon size={16} weight="bold" className="shrink-0 opacity-60" />
+                                <span>Ex-Intern Diskominfo Kota Pontianak</span>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Right Column: Bio Narrative */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.1 }}
+                        className="flex flex-col justify-between gap-6 font-geistSans lg:col-span-7"
+                    >
+                        <div className="flex flex-col gap-4 text-[15px] leading-[1.7] opacity-85 [text-wrap:pretty]">
+                            <p>
+                                Hi, I&apos;m{" "}
+                                <strong className="font-geistMono font-semibold text-foreground">Kiki Alqadrie</strong>{" "}
+                                (known online as{" "}
+                                <strong className="font-geistMono font-semibold text-foreground">Lucians</strong>). I am
+                                an Informatics Engineering graduate with a primary focus on Software Engineering and
+                                Systems Development.
+                            </p>
+                            <p>
+                                During my academic journey at Universitas Muhammadiyah Pontianak (graduating with a
+                                3.83/4.00 GPA), I developed a strong foundation in algorithmic problem solving and data
+                                structures. I interned at{" "}
+                                <strong className="font-geistMono font-medium text-foreground">
+                                    Diskominfo Kota Pontianak
+                                </strong>{" "}
+                                (Sectoral Statistics Division), where I built interactive demographic visualization
+                                dashboards and public-facing data platforms.
+                            </p>
+                            <p>
+                                Currently, I am captivated by{" "}
+                                <strong className="font-geistMono font-medium text-foreground">Rust</strong> and
+                                systems-level programming. I am exploring memory-safe architecture, low-level
+                                performance, and concurrent systems alongside modern web stacks like Next.js and React.
+                            </p>
+                        </div>
+
+                        {/* Social links row */}
+                        <div className="pt-2">
+                            <p className="font-geistMono text-[12px] uppercase tracking-wider opacity-50 mb-3">
+                                Connect
+                            </p>
+                            <div className="flex flex-wrap items-center gap-x-5 gap-y-2.5 font-geistMono text-[14px]">
+                                {SOCIALS.map(({ label, href, icon: Icon }) => (
+                                    <a
+                                        key={label}
+                                        href={href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 opacity-65 transition-opacity hover:opacity-100"
+                                    >
+                                        <Icon size={16} weight="bold" />
+                                        <span className="underline decoration-1 underline-offset-[5px] decoration-[color-mix(in_srgb,var(--foreground-color)_35%,transparent)] hover:decoration-foreground">
+                                            {label}
+                                        </span>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </motion.div>
+                </section>
+
+                {/* Skills / Tech Stack */}
+                <section aria-label="Skills & Technologies" className="flex flex-col gap-6">
+                    <div className="flex items-center gap-2 font-geistMono text-[13px] uppercase tracking-wider opacity-60">
+                        <TerminalIcon size={16} weight="bold" />
+                        <h2>Technical Toolkit</h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                        {SKILLS.map((skillGroup, idx) => (
+                            <motion.div
+                                key={skillGroup.category}
+                                initial={{ opacity: 0, y: 12 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.35, delay: idx * 0.06 }}
+                                className="flex flex-col gap-3 rounded-[6px] border border-[color-mix(in_srgb,var(--foreground-color)_10%,transparent)] bg-[color-mix(in_srgb,var(--foreground-color)_3%,transparent)] p-4 font-geistMono"
+                            >
+                                <span className="text-[12px] font-medium text-[var(--muted-color)]">
+                                    {skillGroup.category}
+                                </span>
+                                <div className="flex flex-wrap gap-1.5">
+                                    {skillGroup.items.map((item) => (
+                                        <span
+                                            key={item}
+                                            className="rounded bg-[color-mix(in_srgb,var(--foreground-color)_7%,transparent)] px-2 py-0.5 text-[12px] opacity-85"
+                                        >
+                                            {item}
+                                        </span>
+                                    ))}
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Engineering Philosophy */}
+                <section aria-label="Engineering Philosophy" className="flex flex-col gap-6">
+                    <div className="flex items-center gap-2 font-geistMono text-[13px] uppercase tracking-wider opacity-60">
+                        <CodeIcon size={16} weight="bold" />
+                        <h2>Engineering Philosophy</h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+                        {PRINCIPLES.map((principle, idx) => (
+                            <motion.article
+                                key={principle.number}
+                                initial={{ opacity: 0, y: 12 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.35, delay: idx * 0.08 }}
+                                className="flex flex-col gap-2 rounded-[6px] border border-[color-mix(in_srgb,var(--foreground-color)_10%,transparent)] p-5"
+                            >
+                                <div className="flex items-center justify-between font-geistMono">
+                                    <span className="text-[12px] opacity-40">{principle.number}</span>
+                                    <SparkleIcon size={14} weight="bold" className="opacity-30" />
+                                </div>
+                                <h3 className="font-geistMono text-[15px] font-medium tracking-tight text-foreground">
+                                    {principle.title}
+                                </h3>
+                                <p className="font-geistSans text-[14px] leading-relaxed text-[var(--muted-color)] [text-wrap:pretty]">
+                                    {principle.description}
+                                </p>
+                            </motion.article>
+                        ))}
+                    </div>
+                </section>
+            </Container>
+        </div>
+    );
+}
