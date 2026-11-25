@@ -17,6 +17,7 @@ import { BriefcaseIcon } from "@phosphor-icons/react/dist/csr/Briefcase";
 import { TerminalIcon } from "@phosphor-icons/react/dist/csr/Terminal";
 import { CodeIcon } from "@phosphor-icons/react/dist/csr/Code";
 import { SparkleIcon } from "@phosphor-icons/react/dist/csr/Sparkle";
+import { HeadphonesIcon } from "@phosphor-icons/react/dist/csr/Headphones";
 
 const SOCIALS = [
     { label: "GitHub", href: "https://github.com/luciaans", icon: GithubLogoIcon },
@@ -141,6 +142,10 @@ export default function AboutPage() {
                                 <BriefcaseIcon size={16} weight="bold" className="shrink-0 opacity-60" />
                                 <span>Ex-Intern Diskominfo Kota Pontianak</span>
                             </div>
+                            <div className="flex items-center gap-2">
+                                <HeadphonesIcon size={16} weight="bold" className="shrink-0 opacity-60" />
+                                <span>Music enthusiast &amp; deep listener</span>
+                            </div>
                         </div>
                     </motion.div>
 
@@ -154,16 +159,19 @@ export default function AboutPage() {
                         <div className="flex flex-col gap-4 text-[15px] leading-[1.7] opacity-85 [text-wrap:pretty]">
                             <p>
                                 Hi, I&apos;m{" "}
-                                <strong className="font-geistMono font-semibold text-foreground">Kiki Alqadrie</strong>{" "}
-                                (known online as{" "}
-                                <strong className="font-geistMono font-semibold text-foreground">Lucians</strong>). I am
-                                an Informatics Engineering graduate with a primary focus on Software Engineering and
-                                Systems Development.
+                                <strong className="font-geistMono font-semibold text-foreground">
+                                    Sayyid M. Rizqi R. Al Qadrie
+                                </strong>
+                                , but friends and colleagues know me simply as{" "}
+                                <strong className="font-geistMono font-semibold text-foreground">Kiki</strong> (or{" "}
+                                <strong className="font-geistMono font-semibold text-foreground">Lucians</strong> on the
+                                web). I am an Informatics Engineering graduate with a primary focus on Software
+                                Engineering and Systems Development.
                             </p>
                             <p>
                                 During my academic journey at Universitas Muhammadiyah Pontianak (graduating with a
-                                3.83/4.00 GPA), I developed a strong foundation in algorithmic problem solving and data
-                                structures. I interned at{" "}
+                                3.83/4.00 GPA), I developed a solid foundation in software architecture, algorithmic
+                                problem solving, and data analytics. I interned at{" "}
                                 <strong className="font-geistMono font-medium text-foreground">
                                     Diskominfo Kota Pontianak
                                 </strong>{" "}
@@ -171,10 +179,15 @@ export default function AboutPage() {
                                 dashboards and public-facing data platforms.
                             </p>
                             <p>
-                                Currently, I am captivated by{" "}
+                                Currently, I am diving deep into{" "}
                                 <strong className="font-geistMono font-medium text-foreground">Rust</strong> and
-                                systems-level programming. I am exploring memory-safe architecture, low-level
-                                performance, and concurrent systems alongside modern web stacks like Next.js and React.
+                                systems-level programming—exploring memory safety, zero-cost abstractions, and
+                                concurrency alongside modern web technologies like Next.js and React.
+                            </p>
+                            <p>
+                                Outside of building systems, I am an avid music listener with an extensive appreciation
+                                across diverse genres, artists, and discographies. Music is my constant companion and
+                                creative catalyst for focus and flow state while coding.
                             </p>
                         </div>
 
