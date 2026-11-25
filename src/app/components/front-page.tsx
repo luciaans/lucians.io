@@ -3,16 +3,20 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useGlobal } from "../../context-providers/global-provider";
+import { GithubLogoIcon } from "@phosphor-icons/react/dist/csr/GithubLogo";
+import { LinkedinLogoIcon } from "@phosphor-icons/react/dist/csr/LinkedinLogo";
+import { DiscordLogoIcon } from "@phosphor-icons/react/dist/csr/DiscordLogo";
+import { InstagramLogoIcon } from "@phosphor-icons/react/dist/csr/InstagramLogo";
 import Cited from "./citation";
 import Container from "./container";
 import type { PondStats } from "./koi-pond/koi-pond";
 import { SOURCES } from "../data/sources";
 
 const SOCIALS = [
-    { label: "github", href: "https://github.com/luciaans" },
-    { label: "linkedin", href: "https://www.linkedin.com/in/kikialqadrie/" },
-    { label: "discord", href: "https://discord.com/users/867236993683816458" },
-    { label: "instagram", href: "https://www.instagram.com/kikiinyaa/" },
+    { label: "github", href: "https://github.com/luciaans", icon: GithubLogoIcon },
+    { label: "linkedin", href: "https://www.linkedin.com/in/kikialqadrie/", icon: LinkedinLogoIcon },
+    { label: "discord", href: "https://discord.com/users/867236993683816458", icon: DiscordLogoIcon },
+    { label: "instagram", href: "https://www.instagram.com/kikiinyaa/", icon: InstagramLogoIcon },
 ];
 
 const UNDERLINE =
@@ -22,7 +26,7 @@ const QuoteLines = () => (
     <>
         building reliable systems,
         <br />
-        tinkering with rust &amp; modern tech
+        exploring modern software &amp; tech
         <span
             aria-hidden="true"
             className="ml-1 inline-block h-[1em] w-[0.55em] translate-y-[0.15em] animate-blink bg-foreground motion-reduce:animate-none"
@@ -31,17 +35,18 @@ const QuoteLines = () => (
 );
 
 const Socials = ({ className }: { className?: string }) => (
-    <p className={className}>
-        {SOCIALS.map(({ label, href }, i) => (
-            <span key={label}>
-                {i > 0 && <span className="opacity-40"> / </span>}
+    <p className={`flex flex-wrap items-center gap-y-2 ${className ?? ""}`}>
+        {SOCIALS.map(({ label, href, icon: Icon }, i) => (
+            <span key={label} className="inline-flex items-center">
+                {i > 0 && <span className="mx-2.5 opacity-30 select-none">/</span>}
                 <a
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`${UNDERLINE} opacity-60 hover:opacity-100 focus-visible:opacity-100`}
+                    className="inline-flex items-center gap-1.5 opacity-60 transition-opacity duration-150 hover:opacity-100 focus-visible:opacity-100"
                 >
-                    {label}
+                    <Icon size={15} weight="bold" aria-hidden />
+                    <span className={UNDERLINE}>{label}</span>
                 </a>
             </span>
         ))}

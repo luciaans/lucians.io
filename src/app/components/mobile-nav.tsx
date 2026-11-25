@@ -3,7 +3,10 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { ExternalLink, Github, Linkedin } from "lucide-react";
+import { GithubLogoIcon } from "@phosphor-icons/react/dist/csr/GithubLogo";
+import { LinkedinLogoIcon } from "@phosphor-icons/react/dist/csr/LinkedinLogo";
+import { DiscordLogoIcon } from "@phosphor-icons/react/dist/csr/DiscordLogo";
+import { InstagramLogoIcon } from "@phosphor-icons/react/dist/csr/InstagramLogo";
 import ThemeIcon from "./theme-icon";
 
 const navLinks = [
@@ -14,8 +17,10 @@ const navLinks = [
 ];
 
 const secondaryLinks = [
-    { label: "GitHub", href: "https://github.com/luciaans" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/kikialqadrie/" },
+    { label: "GitHub", href: "https://github.com/luciaans", icon: GithubLogoIcon },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/kikialqadrie/", icon: LinkedinLogoIcon },
+    { label: "Discord", href: "https://discord.com/users/867236993683816458", icon: DiscordLogoIcon },
+    { label: "Instagram", href: "https://www.instagram.com/kikiinyaa/", icon: InstagramLogoIcon },
 ];
 
 interface MobileNavProps {
@@ -131,25 +136,22 @@ export default function MobileNav({ isLight, toggleTheme }: MobileNavProps) {
                             </nav>
 
                             <div className="flex flex-wrap justify-center gap-x-8 gap-y-5 px-5 pb-[max(28px,env(safe-area-inset-bottom))] pt-2">
-                                {secondaryLinks.map((link) => (
-                                    <a
-                                        key={link.href}
-                                        href={link.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-2 font-inter text-[13px] tracking-wide"
-                                        style={{ color: fgDim }}
-                                    >
-                                        {link.label}
-                                        {link.label === "GitHub" ? (
-                                            <Github size={14} strokeWidth={1.5} />
-                                        ) : link.label === "LinkedIn" ? (
-                                            <Linkedin size={14} strokeWidth={1.5} />
-                                        ) : (
-                                            <ExternalLink size={14} strokeWidth={1.5} />
-                                        )}
-                                    </a>
-                                ))}
+                                {secondaryLinks.map((link) => {
+                                    const Icon = link.icon;
+                                    return (
+                                        <a
+                                            key={link.href}
+                                            href={link.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-2 font-inter text-[13px] tracking-wide"
+                                            style={{ color: fgDim }}
+                                        >
+                                            {link.label}
+                                            <Icon size={15} weight="bold" />
+                                        </a>
+                                    );
+                                })}
                                 {toggleTheme && (
                                     <button
                                         onClick={toggleTheme}

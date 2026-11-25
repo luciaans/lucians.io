@@ -43,7 +43,7 @@ export const metadata = {
         template: "%s | Lucians",
     },
     description:
-        "Portofolio Lucians | Informatics Engineering graduate focused on data analytics, software engineering, and modern systems with Rust.",
+        "Portofolio Lucians | Informatics Engineering graduate focused on data analytics, software engineering, and modern systems.",
     openGraph: {
         type: "website",
         url: "https://lucians.my.id/",
