@@ -15,7 +15,6 @@ import { MapPinIcon } from "@phosphor-icons/react/dist/csr/MapPin";
 import { TerminalIcon } from "@phosphor-icons/react/dist/csr/Terminal";
 import { CodeIcon } from "@phosphor-icons/react/dist/csr/Code";
 import { SparkleIcon } from "@phosphor-icons/react/dist/csr/Sparkle";
-import { CAT_ASCII } from "../../data/cat-art";
 
 const SOCIALS = [
     { label: "GitHub", href: "https://github.com/luciaans", icon: GithubLogoIcon },
@@ -134,8 +133,8 @@ export default function AboutPage() {
                             </div>
                         </div>
 
-                        {/* ASCII Cat Terminal */}
-                        <CatTerminal />
+                        {/* Developer Motto Terminal */}
+                        <MottoTerminal />
                     </motion.div>
 
                     {/* Right Column: Bio Narrative */}
@@ -274,7 +273,7 @@ export default function AboutPage() {
     );
 }
 
-function CatTerminal() {
+function MottoTerminal() {
     return (
         <div className="w-full max-w-[22rem] overflow-hidden rounded-[8px] border border-[color-mix(in_srgb,var(--foreground-color)_12%,transparent)] bg-[color-mix(in_srgb,var(--foreground-color)_3%,transparent)] font-geistMono">
             {/* Terminal bar */}
@@ -284,26 +283,27 @@ function CatTerminal() {
                     <span className="inline-block h-2.5 w-2.5 rounded-full bg-[#ffbd2e]/80" />
                     <span className="inline-block h-2.5 w-2.5 rounded-full bg-[#27c93f]/80" />
                 </div>
-                <span className="text-[11px] lowercase tracking-wider opacity-50">cat.sh</span>
+                <span className="text-[11px] lowercase tracking-wider opacity-50">motto.sh</span>
                 <div className="w-8" />
             </div>
 
             {/* Terminal body */}
-            <div className="p-3">
-                <div className="mb-2 flex items-center gap-1.5 text-[11px] text-[var(--muted-color)]">
+            <div className="flex flex-col gap-2 p-3.5 text-[12px] leading-relaxed">
+                <div className="flex items-center gap-1.5 text-[11px] text-[var(--muted-color)]">
                     <span className="font-semibold text-[#c87852]">luci@arch</span>
                     <span className="opacity-40">:</span>
                     <span className="text-emerald-500/80">~</span>
                     <span className="opacity-40">$</span>
-                    <span className="text-foreground/90">cat cat.txt</span>
+                    <span className="text-foreground/90">cat motto.txt</span>
                 </div>
-                <div className="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                    <pre className="select-none whitespace-pre font-geistMono text-[5px] leading-[1.02] tracking-[-0.04em] text-foreground/80 transition-colors hover:text-foreground sm:text-[5.5px]">
-                        {CAT_ASCII}
-                    </pre>
-                </div>
-                <div className="mt-2 flex items-center gap-1 text-[11px] text-foreground/50">
-                    <span className="text-[#c87852]">&gt;</span>
+                <p className="border-l border-[#c87852]/60 pl-2.5 text-[13px] italic text-foreground/90">
+                    &ldquo;Stay curious, build reliable systems, and keep exploring.&rdquo;
+                </p>
+                <div className="flex items-center gap-1 pt-0.5 text-[11px] text-[var(--muted-color)]">
+                    <span className="font-semibold text-[#c87852]">luci@arch</span>
+                    <span className="opacity-40">:</span>
+                    <span className="text-emerald-500/80">~</span>
+                    <span className="opacity-40">$</span>
                     <span
                         aria-hidden="true"
                         className="inline-block h-[1.1em] w-[0.55em] animate-blink bg-foreground"
