@@ -13,10 +13,10 @@ import type { PondStats } from "./koi-pond/koi-pond";
 import { SOURCES } from "../data/sources";
 
 const SOCIALS = [
-    { label: "github", href: "https://github.com/luciaans", icon: GithubLogoIcon },
-    { label: "linkedin", href: "https://www.linkedin.com/in/kikialqadrie/", icon: LinkedinLogoIcon },
-    { label: "discord", href: "https://discord.com/users/867236993683816458", icon: DiscordLogoIcon },
-    { label: "instagram", href: "https://www.instagram.com/kikiinyaa/", icon: InstagramLogoIcon },
+    { label: "GitHub", href: "https://github.com/luciaans", icon: GithubLogoIcon },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/kikialqadrie/", icon: LinkedinLogoIcon },
+    { label: "Discord", href: "https://discord.com/users/867236993683816458", icon: DiscordLogoIcon },
+    { label: "Instagram", href: "https://www.instagram.com/kikiinyaa/", icon: InstagramLogoIcon },
 ];
 
 const UNDERLINE =
