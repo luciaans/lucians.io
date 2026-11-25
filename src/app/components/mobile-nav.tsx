@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { GithubLogoIcon } from "@phosphor-icons/react/dist/csr/GithubLogo";
 import { LinkedinLogoIcon } from "@phosphor-icons/react/dist/csr/LinkedinLogo";
 import { DiscordLogoIcon } from "@phosphor-icons/react/dist/csr/DiscordLogo";
@@ -30,6 +31,17 @@ interface MobileNavProps {
 
 export default function MobileNav({ isLight, toggleTheme }: MobileNavProps) {
     const [open, setOpen] = useState(false);
+    const pathname = usePathname();
+
+    const getPillLabel = (path: string) => {
+        if (!path || path === "/") return "luci";
+        if (path.startsWith("/projects")) return "projects";
+        if (path.startsWith("/credentials")) return "credentials";
+        if (path.startsWith("/activities")) return "activities";
+        return "luci";
+    };
+
+    const currentLabel = getPillLabel(pathname);
 
     useEffect(() => {
         if (!open) return;
@@ -66,8 +78,11 @@ export default function MobileNav({ isLight, toggleTheme }: MobileNavProps) {
                     className="flex min-h-12 w-full cursor-pointer items-center justify-between rounded-full px-5 py-3 sm:px-6"
                     style={{ background: pillBg, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
                 >
-                    <span className="font-inter text-[18px] font-normal tracking-normal" style={{ color: fg }}>
-                        Lucians
+                    <span
+                        className="font-inter text-[18px] font-normal tracking-normal lowercase"
+                        style={{ color: fg }}
+                    >
+                        {currentLabel}
                     </span>
                     <span className="relative flex h-6 w-6 items-center justify-center">
                         <AnimatePresence mode="wait">
