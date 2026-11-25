@@ -111,7 +111,7 @@ export default function AboutPage() {
                                 sizes="(max-width: 1024px) 100vw, 350px"
                                 quality={90}
                                 priority
-                                className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                                className="object-cover object-[center_25%] transition-transform duration-500 group-hover:scale-[1.02]"
                                 onError={() => setImgSrc("/profile-placeholder.svg")}
                             />
                             {/* Subtle overlay gradient */}
@@ -133,8 +133,7 @@ export default function AboutPage() {
                             </div>
                         </div>
 
-                        {/* Developer Motto Terminal */}
-                        <MottoTerminal />
+
                     </motion.div>
 
                     {/* Right Column: Bio Narrative */}
@@ -273,39 +272,3 @@ export default function AboutPage() {
     );
 }
 
-function MottoTerminal() {
-    return (
-        <div className="w-full max-w-[22rem] overflow-hidden rounded-[8px] border border-[color-mix(in_srgb,var(--foreground-color)_12%,transparent)] bg-[color-mix(in_srgb,var(--foreground-color)_3%,transparent)] font-geistMono">
-            {/* Terminal bar */}
-            <div className="flex items-center justify-between border-b border-[color-mix(in_srgb,var(--foreground-color)_10%,transparent)] bg-[color-mix(in_srgb,var(--foreground-color)_5%,transparent)] px-3 py-2">
-                <div className="flex items-center gap-1.5">
-                    <span className="inline-block h-2.5 w-2.5 rounded-full bg-[#ff5f56]/80" />
-                    <span className="inline-block h-2.5 w-2.5 rounded-full bg-[#ffbd2e]/80" />
-                    <span className="inline-block h-2.5 w-2.5 rounded-full bg-[#27c93f]/80" />
-                </div>
-                <span className="text-[11px] lowercase tracking-wider opacity-50">motto.sh</span>
-                <div className="w-8" />
-            </div>
-
-            {/* Terminal body */}
-            <div className="flex flex-col gap-2 p-3.5 text-[12px] leading-relaxed">
-                <div className="flex items-center gap-1.5 text-[11px] text-[var(--muted-color)]">
-                    <span className="font-semibold text-[#c87852]">luci@arch</span>
-                    <span className="opacity-40">:</span>
-                    <span className="text-emerald-500/80">~</span>
-                    <span className="opacity-40">$</span>
-                    <span className="text-foreground/90">cat motto.txt</span>
-                </div>
-                <p className="border-l border-[#c87852]/60 pl-2.5 text-[13px] italic text-foreground/90">
-                    &ldquo;Stay curious, build reliable systems, and keep exploring.&rdquo;
-                </p>
-                <div className="flex items-center gap-1 pt-0.5 text-[11px] text-[var(--muted-color)]">
-                    <span
-                        aria-hidden="true"
-                        className="inline-block h-[1.1em] w-[0.55em] animate-blink bg-foreground"
-                    />
-                </div>
-            </div>
-        </div>
-    );
-}
