@@ -12,12 +12,10 @@ import { LinkedinLogoIcon } from "@phosphor-icons/react/dist/csr/LinkedinLogo";
 import { DiscordLogoIcon } from "@phosphor-icons/react/dist/csr/DiscordLogo";
 import { InstagramLogoIcon } from "@phosphor-icons/react/dist/csr/InstagramLogo";
 import { MapPinIcon } from "@phosphor-icons/react/dist/csr/MapPin";
-import { GraduationCapIcon } from "@phosphor-icons/react/dist/csr/GraduationCap";
-import { BriefcaseIcon } from "@phosphor-icons/react/dist/csr/Briefcase";
 import { TerminalIcon } from "@phosphor-icons/react/dist/csr/Terminal";
 import { CodeIcon } from "@phosphor-icons/react/dist/csr/Code";
 import { SparkleIcon } from "@phosphor-icons/react/dist/csr/Sparkle";
-import { HeadphonesIcon } from "@phosphor-icons/react/dist/csr/Headphones";
+import { CAT_ASCII } from "../../data/cat-art";
 
 const SOCIALS = [
     { label: "GitHub", href: "https://github.com/luciaans", icon: GithubLogoIcon },
@@ -134,19 +132,10 @@ export default function AboutPage() {
                                 <MapPinIcon size={16} weight="bold" className="shrink-0 opacity-60" />
                                 <span>Pontianak, Indonesia (GMT+7)</span>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <GraduationCapIcon size={16} weight="bold" className="shrink-0 opacity-60" />
-                                <span>Informatics Engineering (S.Kom) · GPA 3.83</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <BriefcaseIcon size={16} weight="bold" className="shrink-0 opacity-60" />
-                                <span>Ex-Intern Diskominfo Kota Pontianak</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <HeadphonesIcon size={16} weight="bold" className="shrink-0 opacity-60" />
-                                <span>Music enthusiast &amp; deep listener</span>
-                            </div>
                         </div>
+
+                        {/* ASCII Cat Terminal */}
+                        <CatTerminal />
                     </motion.div>
 
                     {/* Right Column: Bio Narrative */}
@@ -281,6 +270,46 @@ export default function AboutPage() {
                     </div>
                 </section>
             </Container>
+        </div>
+    );
+}
+
+function CatTerminal() {
+    return (
+        <div className="w-full max-w-[22rem] overflow-hidden rounded-[8px] border border-[color-mix(in_srgb,var(--foreground-color)_12%,transparent)] bg-[color-mix(in_srgb,var(--foreground-color)_3%,transparent)] font-geistMono">
+            {/* Terminal bar */}
+            <div className="flex items-center justify-between border-b border-[color-mix(in_srgb,var(--foreground-color)_10%,transparent)] bg-[color-mix(in_srgb,var(--foreground-color)_5%,transparent)] px-3 py-2">
+                <div className="flex items-center gap-1.5">
+                    <span className="inline-block h-2.5 w-2.5 rounded-full bg-[#ff5f56]/80" />
+                    <span className="inline-block h-2.5 w-2.5 rounded-full bg-[#ffbd2e]/80" />
+                    <span className="inline-block h-2.5 w-2.5 rounded-full bg-[#27c93f]/80" />
+                </div>
+                <span className="text-[11px] lowercase tracking-wider opacity-50">cat.sh</span>
+                <div className="w-8" />
+            </div>
+
+            {/* Terminal body */}
+            <div className="p-3">
+                <div className="mb-2 flex items-center gap-1.5 text-[11px] text-[var(--muted-color)]">
+                    <span className="font-semibold text-[#c87852]">luci@arch</span>
+                    <span className="opacity-40">:</span>
+                    <span className="text-emerald-500/80">~</span>
+                    <span className="opacity-40">$</span>
+                    <span className="text-foreground/90">cat cat.txt</span>
+                </div>
+                <div className="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                    <pre className="select-none whitespace-pre font-geistMono text-[5px] leading-[1.02] tracking-[-0.04em] text-foreground/80 transition-colors hover:text-foreground sm:text-[5.5px]">
+                        {CAT_ASCII}
+                    </pre>
+                </div>
+                <div className="mt-2 flex items-center gap-1 text-[11px] text-foreground/50">
+                    <span className="text-[#c87852]">&gt;</span>
+                    <span
+                        aria-hidden="true"
+                        className="inline-block h-[1.1em] w-[0.55em] animate-blink bg-foreground"
+                    />
+                </div>
+            </div>
         </div>
     );
 }
