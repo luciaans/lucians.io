@@ -95,11 +95,25 @@ function DesktopStrip() {
     }, []);
 
     return (
-        <main className="flex h-full flex-col justify-center pt-12">
+        <main className="flex h-full flex-col justify-center pb-8 pt-24">
+            <header className="mb-8 flex flex-col gap-3 px-[max(1.5rem,calc((100vw-56rem)/2))] font-geistMono">
+                <h1 className="sr-only">Projects</h1>
+                <p className="text-[14px] lowercase leading-relaxed tracking-[0.02em] opacity-60">
+                    selected work.
+                    <span
+                        aria-hidden="true"
+                        className="ml-1 inline-block h-[1em] w-[0.55em] translate-y-[0.15em] animate-blink bg-foreground motion-reduce:animate-none"
+                    />
+                </p>
+                <p className="max-w-[32rem] font-geistSans text-[16px] leading-[1.6] opacity-80 [text-wrap:pretty]">
+                    Selected projects in data analytics, software engineering, and modern development.
+                </p>
+            </header>
+
             {/* The padding lines the first and last tiles up with the 56rem column the project pages use. */}
             <div
                 ref={stripRef}
-                className="flex gap-3 overflow-x-auto px-[max(1.5rem,calc((100vw-56rem)/2))] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                className="flex gap-4 overflow-x-auto px-[max(1.5rem,calc((100vw-56rem)/2))] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             >
                 {projectsByDate.map((project, i) => (
                     <StripTile key={project.slug} project={project} priority={i < 2} />
@@ -118,7 +132,7 @@ function StripTile({ project, priority }: { project: Project; priority: boolean 
         <>
             <div
                 data-slug={project.slug}
-                className="relative aspect-video h-[min(62vh,42rem)] overflow-hidden bg-[color-mix(in_srgb,var(--foreground-color)_6%,transparent)]"
+                className="relative aspect-video h-[min(48vh,32rem)] overflow-hidden rounded-[6px] bg-[color-mix(in_srgb,var(--foreground-color)_6%,transparent)]"
             >
                 <Image
                     src={project.thumb}
@@ -135,15 +149,24 @@ function StripTile({ project, priority }: { project: Project; priority: boolean 
                     </span>
                 )}
             </div>
-            <div className="mt-3 flex items-baseline gap-3">
-                <span className="whitespace-nowrap text-[15px]">{project.name}</span>
-                <span className="whitespace-nowrap font-geistMono text-[12px] text-[var(--muted-color)]">
-                    {project.year}
-                </span>
+            <div className="mt-3 flex flex-col gap-1.5">
+                <div className="flex items-baseline gap-3">
+                    <h2 className="whitespace-nowrap font-geistMono text-[16px] font-medium leading-snug tracking-tight">
+                        {project.name}
+                    </h2>
+                    <span className="whitespace-nowrap font-geistMono text-[12px] tabular-nums text-[var(--muted-color)]">
+                        {project.year}
+                    </span>
+                </div>
+                <p className="font-geistSans text-[14px] leading-relaxed text-[var(--muted-color)] [text-wrap:pretty]">
+                    {project.page?.tagline ?? project.description}
+                </p>
+                {href && (
+                    <span className={`${LINK} mt-0.5 self-start font-geistMono text-[13px] opacity-60`}>
+                        {external ? "visit site ↗" : "view project"}
+                    </span>
+                )}
             </div>
-            {project.page?.tagline && (
-                <p className="mt-1 text-[14px] leading-[1.5] text-[var(--muted-color)]">{project.page.tagline}</p>
-            )}
         </>
     );
     // As wide as the thumbnail, so a long tagline wraps instead of pushing the next tile along.

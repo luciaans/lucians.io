@@ -144,14 +144,14 @@ export const projects: Project[] = [
         slug: "poniva",
         name: "PONIVA - Pontianak Interactive Visualization",
         description:
-            "A public-facing population data platform for Pontianak, combining an interactive GIS map with a demographic dashboard.",
+            "A public-facing population data platform for Pontianak, combining an interactive map with a demographic dashboard.",
         tech: ["JavaScript", "Leaflet.js", "Chart.js", "Tailwind CSS", "GeoJSON"],
         year: "2025",
         link: "https://poniva-diskominfo-ptk.vercel.app/",
         linkLabel: "Visit live PONIVA ↗",
         thumb: "/projects/poniva-live-preview.webp",
         page: {
-            tagline: "An interactive GIS dashboard for exploring Pontianak's population data.",
+            tagline: "An interactive demographic dashboard for exploring Pontianak's population data.",
             about: [
                 "Developed during my internship with the Pontianak City Department of Communication and Informatics, PONIVA brings population indicators and geographic data together in one public-facing web platform. It combines a demographic dashboard with an interactive map so visitors can explore population information across the city.",
             ],
@@ -194,7 +194,7 @@ export const projects: Project[] = [
                 {
                     kind: "text",
                     parts: [
-                        "Contributed to developing the web GIS visualization and public information experience using JavaScript, Leaflet.js, Chart.js, Tailwind CSS, and GeoJSON.",
+                        "Contributed to developing the interactive map visualization and public information experience using JavaScript, Leaflet.js, Chart.js, Tailwind CSS, and GeoJSON.",
                     ],
                 },
             ],

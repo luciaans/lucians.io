@@ -34,7 +34,7 @@ export const activities: ActivityItem[] = [
         description:
             "Completed an internship with the Sectoral Statistics Division of the Pontianak City Department of Communication and Informatics, developing interactive demographic data visualizations and public information web systems. Received a Good performance rating.",
         // TODO: Add activity photo to public/activities/ (e.g. photo: "/activities/diskominfo-team.jpg")
-        tags: ["Internship", "Web GIS", "Government"],
+        tags: ["Internship", "Demographics", "Government"],
     },
     {
         id: "kalimas-google-maps-mapping",
@@ -42,7 +42,7 @@ export const activities: ActivityItem[] = [
         title: "Geographic Mapping of Desa Kalimas on Google Maps",
         description:
             "Conducted geographic mapping of Desa Kalimas, Sungai Kakap, Kubu Raya, documenting the spatial boundaries of each dusun (sub-village) along with photo documentation that is publicly accessible online. Contributed to improving the village's digital geographic presence on Google Maps.",
-        tags: ["Mapping", "GIS", "Google Maps", "Community"],
+        tags: ["Mapping", "Google Maps", "Community"],
     },
     {
         id: "kalimas-digital-gallery",
