@@ -43,6 +43,15 @@ export const SOURCES: Record<string, Source> = {
             "Analyzed and organized public-sector data, then turned it into clear statistics, interactive visualizations, and accessible information services.",
         href: "/projects",
     },
+    rustDev: {
+        key: "rustDev",
+        name: "Rust & Modern Dev",
+        role: "Systems & Modern Software Development",
+        dates: "2026–Present",
+        summary:
+            "Exploring Rust, systems programming, and modern development tooling to build fast and reliable software.",
+        href: "https://github.com/luciaans",
+    },
     webGIS: {
         key: "webGIS",
         name: "Web GIS & Data Apps",

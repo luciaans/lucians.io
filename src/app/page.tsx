@@ -15,20 +15,20 @@ export default function Home() {
     useEffect(() => {
         const root = document.documentElement;
         const previous = { overflow: root.style.overflow, overscroll: root.style.overscrollBehavior };
-        root.style.overflow = "hidden";
-        root.style.overscrollBehavior = "none";
+        root.style.overflow = isMobile ? "auto" : "hidden";
+        root.style.overscrollBehavior = isMobile ? "contain" : "none";
         return () => {
             root.style.overflow = previous.overflow;
             root.style.overscrollBehavior = previous.overscroll;
         };
-    }, []);
+    }, [isMobile]);
 
     if (isMobile === null) return null;
 
     return (
         <div
             id="mainPage"
-            className={`relative h-[100dvh] w-full overflow-hidden bg-background transition-colors duration-300 ${isLight ? "light" : "dark"}`}
+            className={`relative h-[100dvh] w-full overflow-x-hidden ${isMobile ? "overflow-y-auto" : "overflow-y-hidden"} bg-background transition-colors duration-300 ${isLight ? "light" : "dark"}`}
         >
             <KoiPond isLight={isLight} onStats={setStats} className="absolute inset-0 h-full w-full" />
             {isMobile ? (

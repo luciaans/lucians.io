@@ -43,13 +43,13 @@ export const metadata = {
         template: "%s | Lucians",
     },
     description:
-        "Portofolio Lucians | Informatics Engineering graduate focused on data analytics, software engineering, and web GIS.",
+        "Portofolio Lucians | Informatics Engineering graduate focused on data analytics, software engineering, and modern systems with Rust.",
     openGraph: {
         type: "website",
         url: "https://lucians.my.id/",
         siteName: "Lucians",
         title: "Portfolio & Selected Work",
-        description: "Selected projects in data analytics, software engineering, and web GIS.",
+        description: "Selected projects in data analytics, software engineering, and modern systems.",
         locale: "en_US",
         images: [
             {
@@ -63,7 +63,7 @@ export const metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Portfolio & Selected Work",
-        description: "Selected projects in data analytics, software engineering, and web GIS.",
+        description: "Selected projects in data analytics, software engineering, and modern systems.",
         images: ["/opengraph-image"],
     },
 };

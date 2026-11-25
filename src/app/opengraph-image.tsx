@@ -120,7 +120,7 @@ export default function OpenGraphImage() {
                     color: "#6b6b63",
                 }}
             >
-                <span>Turning complex data into clarity.</span>
+                <span>Building reliable systems &amp; modern software.</span>
                 <span>LUCIANS.MY.ID ↗</span>
             </div>
         </div>,

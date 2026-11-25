@@ -25,7 +25,9 @@ export default function ProjectsRoute() {
     if (isMobile === null) return null;
 
     return (
-        <div className={`h-screen w-full overflow-hidden bg-background text-foreground ${isLight ? "light" : "dark"}`}>
+        <div
+            className={`h-[100dvh] w-full overflow-hidden bg-background text-foreground ${isLight ? "light" : "dark"}`}
+        >
             {isMobile ? (
                 <MobileLayout isLight={isLight} toggleTheme={toggleTheme} />
             ) : (
@@ -179,52 +181,109 @@ function StripTile({ project, priority }: { project: Project; priority: boolean 
     );
 }
 
+const LINK =
+    "underline decoration-[color-mix(in_srgb,var(--foreground-color)_35%,transparent)] decoration-1 underline-offset-[5px] outline-none transition-opacity duration-150 hover:decoration-foreground focus-visible:decoration-foreground";
+
 function MobileLayout({ isLight, toggleTheme }: { isLight: boolean; toggleTheme: () => void }) {
+    const router = useRouter();
+
     return (
-        <div className="w-full h-full overflow-y-auto bg-background">
+        <div className="h-full w-full overflow-y-auto bg-background">
             <MobileNav isLight={isLight} toggleTheme={toggleTheme} />
-            <Container as="main" className="flex flex-col pt-[20vw] pb-[12vh]">
-                {projects.map((project, i) => (
-                    <article key={project.index} className="flex flex-col pb-[16vw]">
-                        {/* Image */}
-                        <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
-                            <Image
-                                src={project.thumb}
-                                alt={project.name}
-                                fill
-                                sizes="100vw"
-                                className="object-cover"
-                                priority={i === 0}
-                            />
-                        </div>
+            <Container as="main" className="flex flex-col gap-12 pb-24 pt-28">
+                <header className="flex flex-col gap-4 font-geistMono">
+                    <h1 className="sr-only">Projects</h1>
+                    <p className="text-[14px] lowercase leading-relaxed tracking-[0.02em] opacity-60">
+                        selected work.
+                        <span
+                            aria-hidden="true"
+                            className="ml-1 inline-block h-[1em] w-[0.55em] translate-y-[0.15em] animate-blink bg-foreground motion-reduce:animate-none"
+                        />
+                    </p>
+                    <p className="max-w-[32rem] font-geistSans text-[16px] leading-[1.6] opacity-80 [text-wrap:pretty]">
+                        Selected projects in data analytics, software engineering, and modern development.
+                    </p>
+                </header>
 
-                        {/* Name */}
-                        <h2 className="font-inter text-[21px] mt-[5vw] mb-2 text-foreground">{project.name}</h2>
+                <section aria-label="Projects" className="flex flex-col gap-14">
+                    {projectsByDate.map((project, i) => {
+                        const href = projectHref(project);
+                        const external = href !== undefined && isExternal(href);
+                        const body = (
+                            <>
+                                <div className="relative aspect-video w-full overflow-hidden rounded-[6px] bg-[color-mix(in_srgb,var(--foreground-color)_6%,transparent)]">
+                                    <Image
+                                        src={project.thumb}
+                                        alt=""
+                                        fill
+                                        sizes="100vw"
+                                        quality={90}
+                                        className="object-cover"
+                                        priority={i === 0}
+                                    />
+                                </div>
+                                <div className="flex flex-col gap-2">
+                                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                                        <h2 className="font-geistMono text-[16px] font-medium leading-snug tracking-tight">
+                                            {project.name}
+                                        </h2>
+                                        <span className="font-geistMono text-[12px] tabular-nums text-[var(--muted-color)]">
+                                            {project.year}
+                                        </span>
+                                    </div>
+                                    <p className="font-geistSans text-[14px] leading-relaxed text-[var(--muted-color)] [text-wrap:pretty]">
+                                        {project.page?.tagline ?? project.description}
+                                    </p>
+                                    {href && (
+                                        <span
+                                            className={`${LINK} mt-1 self-start font-geistMono text-[13px] opacity-60`}
+                                        >
+                                            {external ? "visit site ↗" : "view project"}
+                                        </span>
+                                    )}
+                                </div>
+                            </>
+                        );
+                        const className = "group flex flex-col gap-4 outline-none focus-visible:underline";
 
-                        {/* Description */}
-                        <p className="font-inter text-[17px] text-foreground opacity-60">{project.description}</p>
-
-                        {/* Year */}
-                        <div className="mt-5">
-                            <p className="font-inter text-[17px] text-foreground opacity-60 mb-1">Year</p>
-                            <p className="font-inter text-[17px] text-foreground">{project.year}</p>
-                        </div>
-
-                        {projectHref(project) && (
-                            <a
-                                href={projectHref(project)}
-                                {...(isExternal(projectHref(project) ?? "") && {
-                                    target: "_blank",
-                                    rel: "noopener noreferrer",
-                                })}
-                                className="mt-5 self-start inline-flex items-center justify-center gap-5 whitespace-nowrap font-small text-15 cursor-pointer ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-12/50 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-15 [&_svg]:shrink-0 dark:ring-offset-neutral-950 dark:focus-visible:ring-neutral-300 active:scale-95 transition-all text-foreground py-1 px-4 rounded-full"
-                                style={{ background: "color-mix(in srgb, var(--foreground-color) 8%, transparent)" }}
+                        if (!href) {
+                            return (
+                                <article key={project.slug} className={className}>
+                                    {body}
+                                </article>
+                            );
+                        }
+                        if (external) {
+                            return (
+                                <a
+                                    key={project.slug}
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`${project.name}, opens in a new tab`}
+                                    className={className}
+                                >
+                                    {body}
+                                </a>
+                            );
+                        }
+                        return (
+                            <Link
+                                key={project.slug}
+                                href={href}
+                                aria-label={project.name}
+                                className={className}
+                                onClick={(e) => {
+                                    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+                                    e.preventDefault();
+                                    pushWithTransition(router, href);
+                                }}
                             >
-                                View project
-                            </a>
-                        )}
-                    </article>
-                ))}
+                                {body}
+                            </Link>
+                        );
+                    })}
+                </section>
             </Container>
         </div>
     );

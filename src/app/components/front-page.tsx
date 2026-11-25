@@ -9,7 +9,8 @@ import type { PondStats } from "./koi-pond/koi-pond";
 import { SOURCES } from "../data/sources";
 
 const SOCIALS = [
-    { label: "github", href: "https://github.com/luciaans" }, // TODO: ganti dengan link GitHub kamu
+    { label: "github", href: "https://github.com/luciaans" },
+    { label: "linkedin", href: "https://www.linkedin.com/in/kikialqadrie/" },
     { label: "discord", href: "https://discord.com/users/867236993683816458" },
     { label: "instagram", href: "https://www.instagram.com/kikiinyaa/" },
 ];
@@ -17,12 +18,11 @@ const SOCIALS = [
 const UNDERLINE =
     "underline decoration-[color-mix(in_srgb,var(--foreground-color)_35%,transparent)] decoration-1 underline-offset-[5px] outline-none transition-opacity duration-150 hover:decoration-foreground focus-visible:decoration-foreground";
 
-// TODO: Replace with your personal 2-line tagline
 const QuoteLines = () => (
     <>
-        turning complex data into clarity,
+        building reliable systems,
         <br />
-        crafting thoughtful software
+        tinkering with rust &amp; modern tech
         <span
             aria-hidden="true"
             className="ml-1 inline-block h-[1em] w-[0.55em] translate-y-[0.15em] animate-blink bg-foreground motion-reduce:animate-none"
@@ -115,11 +115,11 @@ const desktopPage = ({ isLight, stats }: { isLight: boolean; stats: PondStats })
                     .
                 </p>
                 <p>
-                    Currently exploring AI, emerging technologies, and building{" "}
-                    <Cited source="webGIS" isLight={isLight}>
-                        web GIS
+                    Currently exploring AI, emerging technologies, and diving deep into{" "}
+                    <Cited source="rustDev" isLight={isLight}>
+                        Rust
                     </Cited>{" "}
-                    and data-driven applications.
+                    and modern software development.
                 </p>
                 <Socials className="mt-[1.5vh]" />
             </motion.div>
@@ -177,8 +177,8 @@ const mobilePage = () => {
                     worked on <MobileLink source="governmentProjects">government projects</MobileLink>.
                 </p>
                 <p>
-                    Currently exploring AI, emerging technologies, and building{" "}
-                    <MobileLink source="webGIS">web GIS</MobileLink> and data-driven applications.
+                    Currently exploring AI, emerging technologies, and diving deep into{" "}
+                    <MobileLink source="rustDev">Rust</MobileLink> and modern software development.
                 </p>
                 <Socials className="mt-2" />
             </motion.div>
