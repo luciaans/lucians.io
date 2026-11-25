@@ -300,10 +300,6 @@ function MottoTerminal() {
                     &ldquo;Stay curious, build reliable systems, and keep exploring.&rdquo;
                 </p>
                 <div className="flex items-center gap-1 pt-0.5 text-[11px] text-[var(--muted-color)]">
-                    <span className="font-semibold text-[#c87852]">luci@arch</span>
-                    <span className="opacity-40">:</span>
-                    <span className="text-emerald-500/80">~</span>
-                    <span className="opacity-40">$</span>
                     <span
                         aria-hidden="true"
                         className="inline-block h-[1.1em] w-[0.55em] animate-blink bg-foreground"
