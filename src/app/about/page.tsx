@@ -116,13 +116,6 @@ export default function AboutPage() {
                             />
                             {/* Subtle overlay gradient */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[rgb(0_0_0/0.4)] via-transparent to-transparent opacity-60" />
-                            <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between font-geistMono text-[12px] text-white">
-                                <span className="rounded bg-black/60 px-2 py-1 backdrop-blur-sm">@luciaans</span>
-                                <span className="flex items-center gap-1.5 rounded bg-black/60 px-2 py-1 backdrop-blur-sm">
-                                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                                    Available
-                                </span>
-                            </div>
                         </div>
 
                         {/* Quick meta details */}
