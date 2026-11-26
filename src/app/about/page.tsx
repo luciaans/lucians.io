@@ -13,7 +13,6 @@ import { DiscordLogoIcon } from "@phosphor-icons/react/dist/csr/DiscordLogo";
 import { InstagramLogoIcon } from "@phosphor-icons/react/dist/csr/InstagramLogo";
 import { SpotifyLogoIcon } from "@phosphor-icons/react/dist/csr/SpotifyLogo";
 import { TerminalIcon } from "@phosphor-icons/react/dist/csr/Terminal";
-import { SpotifyLogoIcon } from "@phosphor-icons/react/dist/csr/SpotifyLogo";
 import { CodeIcon } from "@phosphor-icons/react/dist/csr/Code";
 import { SparkleIcon } from "@phosphor-icons/react/dist/csr/Sparkle";
 
