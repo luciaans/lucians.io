@@ -132,8 +132,6 @@ export default function AboutPage() {
                                 <span>Pontianak, Indonesia (GMT+7)</span>
                             </div>
                         </div>
-
-
                     </motion.div>
 
                     {/* Right Column: Bio Narrative */}
@@ -271,4 +269,3 @@ export default function AboutPage() {
         </div>
     );
 }
-
