@@ -11,8 +11,9 @@ import { GithubLogoIcon } from "@phosphor-icons/react/dist/csr/GithubLogo";
 import { LinkedinLogoIcon } from "@phosphor-icons/react/dist/csr/LinkedinLogo";
 import { DiscordLogoIcon } from "@phosphor-icons/react/dist/csr/DiscordLogo";
 import { InstagramLogoIcon } from "@phosphor-icons/react/dist/csr/InstagramLogo";
-import { MapPinIcon } from "@phosphor-icons/react/dist/csr/MapPin";
+import { SpotifyLogoIcon } from "@phosphor-icons/react/dist/csr/SpotifyLogo";
 import { TerminalIcon } from "@phosphor-icons/react/dist/csr/Terminal";
+import { SpotifyLogoIcon } from "@phosphor-icons/react/dist/csr/SpotifyLogo";
 import { CodeIcon } from "@phosphor-icons/react/dist/csr/Code";
 import { SparkleIcon } from "@phosphor-icons/react/dist/csr/Sparkle";
 
@@ -118,12 +119,17 @@ export default function AboutPage() {
                             <div className="absolute inset-0 bg-gradient-to-t from-[rgb(0_0_0/0.4)] via-transparent to-transparent opacity-60" />
                         </div>
 
-                        {/* Quick meta details */}
+                        {/* Now playing */}
                         <div className="flex flex-col gap-2.5 font-geistMono text-[13px] opacity-85">
-                            <div className="flex items-center gap-2">
-                                <MapPinIcon size={16} weight="bold" className="shrink-0 opacity-60" />
-                                <span>Pontianak, Indonesia (GMT+7)</span>
-                            </div>
+                            <a
+                                href="https://open.spotify.com/user/31xnixnvs4aipgfaei7sfel56vp4"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 underline decoration-1 underline-offset-[5px] decoration-[color-mix(in_srgb,var(--foreground-color)_35%,transparent)] hover:decoration-foreground hover:opacity-100 transition-opacity"
+                            >
+                                <SpotifyLogoIcon size={16} weight="bold" className="shrink-0 opacity-60" />
+                                <span>Spotify: 31xnixnvs4aipgfaei7sfel56vp4</span>
+                            </a>
                         </div>
                     </motion.div>
 
