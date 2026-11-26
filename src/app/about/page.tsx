@@ -65,7 +65,7 @@ const PRINCIPLES = [
 
 export default function AboutPage() {
     const { isLight, isMobile, toggleTheme } = useGlobal();
-    const [imgSrc, setImgSrc] = useState("/profile.jpg");
+    const [imgSrc, setImgSrc] = useState("/profile.flipped.jpg");
 
     if (isMobile === null) return null;
 
