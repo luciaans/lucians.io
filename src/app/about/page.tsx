@@ -14,7 +14,7 @@ import { InstagramLogoIcon } from "@phosphor-icons/react/dist/csr/InstagramLogo"
 import { TerminalIcon } from "@phosphor-icons/react/dist/csr/Terminal";
 import { CodeIcon } from "@phosphor-icons/react/dist/csr/Code";
 import { SparkleIcon } from "@phosphor-icons/react/dist/csr/Sparkle";
-import NowPlaying from "@/app/components/now-playing/NowPlaying";
+import NowPlaying from "../components/now-playing/NowPlaying";
 
 const SOCIALS = [
     { label: "GitHub", href: "https://github.com/luciaans", icon: GithubLogoIcon },

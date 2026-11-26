@@ -22,7 +22,7 @@ export default function NowPlaying() {
         const fetchNowPlaying = async () => {
             try {
                 const res = await fetch("/api/spotify/now-playing", {
-                    next: { revalidate: 0 },
+                    cache: "no-store",
                 });
                 if (!res.ok) {
                     setError(true);

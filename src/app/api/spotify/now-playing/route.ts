@@ -9,7 +9,7 @@ export async function GET() {
 
     const response = await fetch("https://api.spotify.com/v1/me/player/currently-playing", {
         headers: { Authorization: `Bearer ${accessToken}` },
-        next: { revalidate: 30 },
+        cache: "no-store",
     });
 
     if (response.status === 204 || response.status === 404) {
