@@ -79,18 +79,23 @@ export default function Toolkit() {
                 <TerminalIcon size={16} weight="bold" />
                 <h2>Technical Toolkit</h2>
             </div>
-            <div className="flex flex-col gap-6">
+            <div className="grid gap-3 sm:grid-cols-2">
                 {GROUPS.map((group) => (
-                    <div key={group.label}>
-                        <p className="mb-3 font-geistMono text-[11px] opacity-45">// {group.label}</p>
-                        <div className="flex flex-wrap gap-x-5 gap-y-2">
+                    <div
+                        key={group.label}
+                        className="border border-[color-mix(in_srgb,var(--foreground-color)_12%,transparent)] bg-[color-mix(in_srgb,var(--foreground-color)_3%,transparent)] p-3"
+                    >
+                        <p className="mb-3 font-geistMono text-[11px]">
+                            <span className="opacity-45">~/toolkit $ </span>ls {group.label}
+                        </p>
+                        <div className="grid grid-cols-[repeat(auto-fit,minmax(128px,1fr))] gap-x-2 gap-y-1 border-t border-[color-mix(in_srgb,var(--foreground-color)_8%,transparent)] pt-2">
                             {group.items.map(({ name, icon, learning, neutralHover }) => (
                                 <span
                                     key={name}
                                     role="img"
                                     tabIndex={0}
                                     aria-label={learning ? `${name}, learning` : name}
-                                    className={`group inline-flex min-h-8 items-center gap-2 rounded-sm outline-none transition-colors focus-visible:ring-1 focus-visible:ring-foreground ${
+                                    className={`group inline-flex min-h-8 min-w-0 items-center gap-2 rounded-sm outline-none transition-colors focus-visible:ring-1 focus-visible:ring-foreground ${
                                         neutralHover
                                             ? "hover:text-foreground focus-visible:text-foreground"
                                             : "hover:text-[var(--brand-color)] focus-visible:text-[var(--brand-color)]"
