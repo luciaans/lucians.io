@@ -92,35 +92,42 @@ export default function AboutPage() {
                         transition={{ duration: 0.4, delay: 0.1 }}
                         className="flex flex-col justify-between gap-6 font-geistSans lg:col-span-7"
                     >
-                        <div className="flex flex-col gap-5 text-[15px] leading-[1.75] opacity-85 [text-wrap:pretty]">
-                            <p>
-                                Hi, I&apos;m{" "}
-                                <strong className="font-semibold text-foreground">Sayyid M. Rizqi R. Al Qadrie</strong>,
-                                but friends and colleagues know me simply as{" "}
-                                <strong className="font-semibold text-foreground">Kiki</strong> (or{" "}
-                                <strong className="font-semibold text-foreground">Lucians</strong> on the web). I am an
-                                Informatics Engineering graduate with a primary focus on Software Engineering and
-                                Systems Development.
+                        <div className="border border-[color-mix(in_srgb,var(--foreground-color)_12%,transparent)] bg-[color-mix(in_srgb,var(--foreground-color)_3%,transparent)] p-4">
+                            <p className="mb-4 border-b border-[color-mix(in_srgb,var(--foreground-color)_8%,transparent)] pb-2 font-geistMono text-[11px] opacity-50">
+                                ~/lucians $ cat about.txt
                             </p>
-                            <p>
-                                During my academic journey at Universitas Muhammadiyah Pontianak (graduating with a
-                                3.83/4.00 GPA), I developed a solid foundation in software architecture, algorithmic
-                                problem solving, and data analytics. I interned at{" "}
-                                <strong className="font-medium text-foreground">Diskominfo Kota Pontianak</strong>{" "}
-                                (Sectoral Statistics Division), where I built interactive demographic visualization
-                                dashboards and public-facing data platforms.
-                            </p>
-                            <p>
-                                Currently, I am diving deep into{" "}
-                                <strong className="font-medium text-foreground">Rust</strong> and systems-level
-                                programming—exploring memory safety, zero-cost abstractions, and concurrency alongside
-                                modern web technologies like Next.js and React.
-                            </p>
-                            <p>
-                                Outside of building systems, I am an avid music listener with an extensive appreciation
-                                across diverse genres, artists, and discographies. Music is my constant companion and
-                                creative catalyst for focus and flow state while coding.
-                            </p>
+                            <div className="flex flex-col gap-5 text-justify text-[15px] leading-[1.75] opacity-85 [text-wrap:pretty]">
+                                <p>
+                                    Hi, I&apos;m{" "}
+                                    <strong className="font-semibold text-foreground">
+                                        Sayyid M. Rizqi R. Al Qadrie
+                                    </strong>
+                                    , but friends and colleagues know me simply as{" "}
+                                    <strong className="font-semibold text-foreground">Kiki</strong> (or{" "}
+                                    <strong className="font-semibold text-foreground">Lucians</strong> on the web). I am
+                                    an Informatics Engineering graduate with a primary focus on Software Engineering and
+                                    Systems Development.
+                                </p>
+                                <p>
+                                    During my academic journey at Universitas Muhammadiyah Pontianak (graduating with a
+                                    3.83/4.00 GPA), I developed a solid foundation in software architecture, algorithmic
+                                    problem solving, and data analytics. I interned at{" "}
+                                    <strong className="font-medium text-foreground">Diskominfo Kota Pontianak</strong>{" "}
+                                    (Sectoral Statistics Division), where I built interactive demographic visualization
+                                    dashboards and public-facing data platforms.
+                                </p>
+                                <p>
+                                    Currently, I am diving deep into{" "}
+                                    <strong className="font-medium text-foreground">Rust</strong> and systems-level
+                                    programming—exploring memory safety, zero-cost abstractions, and concurrency
+                                    alongside modern web technologies like Next.js and React.
+                                </p>
+                                <p>
+                                    Outside of building systems, I am an avid music listener with an extensive
+                                    appreciation across diverse genres, artists, and discographies. Music is my constant
+                                    companion and creative catalyst for focus and flow state while coding.
+                                </p>
+                            </div>
                         </div>
 
                         {/* Social links row */}
