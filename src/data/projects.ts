@@ -387,6 +387,105 @@ export const projects: Project[] = [
             ],
         },
     },
+    {
+        index: "05",
+        slug: "mutabaah",
+        name: "MUTABA’AH",
+        description:
+            "A prayer attendance and student monitoring platform for pesantren, with class-based records and reports.",
+        tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Recharts", "ExcelJS"],
+        year: "2026",
+        link: "https://www.mutaba-ah.web.id",
+        linkLabel: "Visit MUTABA’AH ↗",
+        thumb: "/projects/mutabaah-thumbnail.jpg",
+        page: {
+            tagline: "A daily worship monitoring workspace for pesantren administrators and student advisors.",
+            about: [
+                "MUTABA’AH helps pesantren record students’ daily prayers and follow attendance across classes. Administrators and advisors can manage student records, review progress, and prepare reports from one web application.",
+            ],
+            poster: "/projects/mutabaah-dashboard.png",
+            story: [
+                { kind: "heading", text: "Daily overview" },
+                {
+                    kind: "text",
+                    parts: [
+                        "The dashboard summarizes active students, classes, and the day's attendance so staff can quickly see which records still need attention.",
+                    ],
+                },
+                {
+                    kind: "image",
+                    src: "/projects/mutabaah-dashboard.png",
+                    alt: "MUTABA’AH dashboard showing attendance summaries and daily prayer statistics.",
+                    width: 1897,
+                    height: 976,
+                },
+                { kind: "heading", text: "Prayer attendance" },
+                {
+                    kind: "text",
+                    parts: [
+                        "Record attendance by date, class, and prayer. Unperformed prayers can be marked with a reason, and the interface keeps the class list and save action close at hand.",
+                    ],
+                },
+                {
+                    kind: "image",
+                    src: "/projects/mutabaah-attendance.png",
+                    alt: "Prayer attendance form for a class; student names are anonymized.",
+                    width: 1896,
+                    height: 977,
+                },
+                { kind: "heading", text: "Student records" },
+                {
+                    kind: "text",
+                    parts: [
+                        "Manage student profiles, class placement, and active status. Spreadsheet import and export help staff maintain larger class lists.",
+                    ],
+                },
+                {
+                    kind: "image",
+                    src: "/projects/mutabaah-students.png",
+                    alt: "Student management page with class and status filters.",
+                    width: 1896,
+                    height: 980,
+                },
+                { kind: "heading", text: "Progress reports" },
+                {
+                    kind: "text",
+                    parts: [
+                        "Filter records by period and class, then review completion rates and prayer-by-prayer summaries. Reports can be exported for further use; names in this screenshot are anonymized.",
+                    ],
+                },
+                {
+                    kind: "image",
+                    src: "/projects/mutabaah-reports.png",
+                    alt: "Weekly prayer report with attendance statistics and anonymized student names.",
+                    width: 1896,
+                    height: 978,
+                },
+                { kind: "heading", text: "Attendance history" },
+                {
+                    kind: "text",
+                    parts: [
+                        "Review saved attendance records with date, prayer, class, status, and the account that recorded each entry. Student and staff names in this screenshot are anonymized.",
+                    ],
+                },
+                {
+                    kind: "image",
+                    src: "/projects/mutabaah-history.png",
+                    alt: "Attendance history table with anonymized student and staff names.",
+                    width: 1900,
+                    height: 978,
+                },
+                { kind: "heading", text: "Built for shared administration" },
+                {
+                    kind: "text",
+                    parts: [
+                        "The application supports administrator and advisor workflows. Built with Next.js, TypeScript, Tailwind CSS, and Supabase. ",
+                        { text: "View source on GitHub ↗", href: "https://github.com/luciaans/Mutaba.ah" },
+                    ],
+                },
+            ],
+        },
+    },
 ];
 
 const SEASONS = ["Winter", "Spring", "Summer", "Fall"];
