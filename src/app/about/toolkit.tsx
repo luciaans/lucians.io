@@ -4,14 +4,17 @@ import {
     siCss,
     siDocker,
     siExpress,
+    siFlutter,
     siGit,
     siGithub,
     siHtml5,
     siJavascript,
     siLeaflet,
     siLinux,
+    siLua,
     siNextdotjs,
     siNodedotjs,
+    siOpenjdk,
     siPostgresql,
     siPython,
     siReact,
@@ -27,7 +30,7 @@ import {
 
 const GROUPS: {
     label: string;
-    items: { name: string; icon: SimpleIcon; learning?: boolean; neutralHover?: boolean }[];
+    items: { name: string; icon?: SimpleIcon; symbol?: "terminal"; learning?: boolean; neutralHover?: boolean }[];
 }[] = [
     {
         label: "languages",
@@ -36,6 +39,8 @@ const GROUPS: {
             { name: "TypeScript", icon: siTypescript },
             { name: "JavaScript", icon: siJavascript },
             { name: "Python", icon: siPython },
+            { name: "Java", icon: siOpenjdk },
+            { name: "Lua", icon: siLua },
             { name: "SQL", icon: siSqlite },
         ],
     },
@@ -46,6 +51,7 @@ const GROUPS: {
             { name: "CSS", icon: siCss },
             { name: "Next.js", icon: siNextdotjs, neutralHover: true },
             { name: "React", icon: siReact },
+            { name: "Flutter", icon: siFlutter },
             { name: "Node.js", icon: siNodedotjs },
             { name: "Express", icon: siExpress, neutralHover: true },
             { name: "Tailwind CSS", icon: siTailwindcss },
@@ -64,6 +70,7 @@ const GROUPS: {
         items: [
             { name: "Git", icon: siGit },
             { name: "GitHub", icon: siGithub, neutralHover: true },
+            { name: "Orca", symbol: "terminal", neutralHover: true },
             { name: "Linux", icon: siLinux },
             { name: "Docker", icon: siDocker },
             { name: "Vite", icon: siVite },
@@ -89,7 +96,7 @@ export default function Toolkit() {
                             <span className="opacity-45">~/toolkit $ </span>ls {group.label}
                         </p>
                         <div className="grid grid-cols-[repeat(auto-fit,minmax(128px,1fr))] gap-x-2 gap-y-1 border-t border-[color-mix(in_srgb,var(--foreground-color)_8%,transparent)] pt-2">
-                            {group.items.map(({ name, icon, learning, neutralHover }) => (
+                            {group.items.map(({ name, icon, symbol, learning, neutralHover }) => (
                                 <span
                                     key={name}
                                     role="img"
@@ -100,17 +107,21 @@ export default function Toolkit() {
                                             ? "hover:text-foreground focus-visible:text-foreground"
                                             : "hover:text-[var(--brand-color)] focus-visible:text-[var(--brand-color)]"
                                     }`}
-                                    style={{ "--brand-color": `#${icon.hex}` } as CSSProperties}
+                                    style={icon ? ({ "--brand-color": `#${icon.hex}` } as CSSProperties) : undefined}
                                 >
                                     <span className="relative inline-flex shrink-0">
-                                        <svg
-                                            aria-hidden="true"
-                                            viewBox="0 0 24 24"
-                                            className="h-5 w-5"
-                                            style={{ fill: "currentColor" }}
-                                        >
-                                            <path d={icon.path} />
-                                        </svg>
+                                        {icon ? (
+                                            <svg
+                                                aria-hidden="true"
+                                                viewBox="0 0 24 24"
+                                                className="h-5 w-5"
+                                                style={{ fill: "currentColor" }}
+                                            >
+                                                <path d={icon.path} />
+                                            </svg>
+                                        ) : symbol === "terminal" ? (
+                                            <TerminalIcon aria-hidden="true" size={20} weight="bold" />
+                                        ) : null}
                                         {learning && (
                                             <span
                                                 aria-hidden="true"
