@@ -71,7 +71,6 @@ export const projects: Project[] = [
                 "Developed as an undergraduate thesis for the mosque of Universitas Muhammadiyah Pontianak, this project turns Masjid Nurrudin into an explorable 3D experience on Roblox. Visitors can explore the mosque, listen to Qur'an recitations, check prayer times, and access Islamic learning content. Built with Roblox Studio and Lua, the project is registered as a computer program with Indonesia's Directorate General of Intellectual Property (DJKI).",
             ],
             poster: "/projects/masjid-nurrudin-manual-exterior.webp",
-            cover: "/projects/masjid-nurrudin-manual-exterior.webp",
             story: [
                 { kind: "heading", text: "Explore and learn" },
                 {
