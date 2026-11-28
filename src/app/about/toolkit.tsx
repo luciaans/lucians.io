@@ -122,8 +122,9 @@ export default function Toolkit() {
                                         ) : symbol === "orca" ? (
                                             <span
                                                 aria-hidden="true"
-                                                className="h-5 w-5 bg-current"
+                                                className="block h-5 w-5"
                                                 style={{
+                                                    backgroundColor: "currentColor",
                                                     maskImage: "url('/toolkit/orca-mark.svg')",
                                                     WebkitMaskImage: "url('/toolkit/orca-mark.svg')",
                                                     maskPosition: "center",
