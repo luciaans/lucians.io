@@ -92,33 +92,29 @@ export default function AboutPage() {
                         transition={{ duration: 0.4, delay: 0.1 }}
                         className="flex flex-col justify-between gap-6 font-geistSans lg:col-span-7"
                     >
-                        <div className="flex flex-col gap-4 text-[15px] leading-[1.7] opacity-85 [text-wrap:pretty]">
+                        <div className="flex flex-col gap-5 text-[15px] leading-[1.75] opacity-85 [text-wrap:pretty]">
                             <p>
                                 Hi, I&apos;m{" "}
-                                <strong className="font-geistMono font-semibold text-foreground">
-                                    Sayyid M. Rizqi R. Al Qadrie
-                                </strong>
-                                , but friends and colleagues know me simply as{" "}
-                                <strong className="font-geistMono font-semibold text-foreground">Kiki</strong> (or{" "}
-                                <strong className="font-geistMono font-semibold text-foreground">Lucians</strong> on the
-                                web). I am an Informatics Engineering graduate with a primary focus on Software
-                                Engineering and Systems Development.
+                                <strong className="font-semibold text-foreground">Sayyid M. Rizqi R. Al Qadrie</strong>,
+                                but friends and colleagues know me simply as{" "}
+                                <strong className="font-semibold text-foreground">Kiki</strong> (or{" "}
+                                <strong className="font-semibold text-foreground">Lucians</strong> on the web). I am an
+                                Informatics Engineering graduate with a primary focus on Software Engineering and
+                                Systems Development.
                             </p>
                             <p>
                                 During my academic journey at Universitas Muhammadiyah Pontianak (graduating with a
                                 3.83/4.00 GPA), I developed a solid foundation in software architecture, algorithmic
                                 problem solving, and data analytics. I interned at{" "}
-                                <strong className="font-geistMono font-medium text-foreground">
-                                    Diskominfo Kota Pontianak
-                                </strong>{" "}
+                                <strong className="font-medium text-foreground">Diskominfo Kota Pontianak</strong>{" "}
                                 (Sectoral Statistics Division), where I built interactive demographic visualization
                                 dashboards and public-facing data platforms.
                             </p>
                             <p>
                                 Currently, I am diving deep into{" "}
-                                <strong className="font-geistMono font-medium text-foreground">Rust</strong> and
-                                systems-level programming—exploring memory safety, zero-cost abstractions, and
-                                concurrency alongside modern web technologies like Next.js and React.
+                                <strong className="font-medium text-foreground">Rust</strong> and systems-level
+                                programming—exploring memory safety, zero-cost abstractions, and concurrency alongside
+                                modern web technologies like Next.js and React.
                             </p>
                             <p>
                                 Outside of building systems, I am an avid music listener with an extensive appreciation
