@@ -36,7 +36,7 @@ export default function AboutPage() {
                 <TopNav isLight={isLight} toggleTheme={toggleTheme} />
             )}
 
-            <Container as="main" className="flex flex-col gap-14 pb-24 pt-28 lg:gap-20 lg:pt-36">
+            <Container as="main" className="flex flex-col gap-8 pb-24 pt-24 lg:gap-14 lg:pt-28">
                 {/* Header */}
                 <header className="flex flex-col gap-4 font-geistMono">
                     <h1 className="sr-only">About Me</h1>
@@ -54,7 +54,7 @@ export default function AboutPage() {
                 </header>
 
                 {/* Hero profile grid */}
-                <section aria-label="Profile and bio" className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
+                <section aria-label="Profile and bio" className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
                     {/* Left Column: Profile Card */}
                     <motion.div
                         initial={{ opacity: 0, y: 16 }}
