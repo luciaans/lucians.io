@@ -30,7 +30,7 @@ import {
 
 const GROUPS: {
     label: string;
-    items: { name: string; icon?: SimpleIcon; symbol?: "terminal"; learning?: boolean; neutralHover?: boolean }[];
+    items: { name: string; icon?: SimpleIcon; symbol?: "orca"; learning?: boolean; neutralHover?: boolean }[];
 }[] = [
     {
         label: "languages",
@@ -70,7 +70,7 @@ const GROUPS: {
         items: [
             { name: "Git", icon: siGit },
             { name: "GitHub", icon: siGithub, neutralHover: true },
-            { name: "Orca", symbol: "terminal", neutralHover: true },
+            { name: "Orca", symbol: "orca", neutralHover: true },
             { name: "Linux", icon: siLinux },
             { name: "Docker", icon: siDocker },
             { name: "Vite", icon: siVite },
@@ -119,8 +119,21 @@ export default function Toolkit() {
                                             >
                                                 <path d={icon.path} />
                                             </svg>
-                                        ) : symbol === "terminal" ? (
-                                            <TerminalIcon aria-hidden="true" size={20} weight="bold" />
+                                        ) : symbol === "orca" ? (
+                                            <span
+                                                aria-hidden="true"
+                                                className="h-5 w-5 bg-current"
+                                                style={{
+                                                    maskImage: "url('/toolkit/orca-mark.png')",
+                                                    WebkitMaskImage: "url('/toolkit/orca-mark.png')",
+                                                    maskPosition: "center",
+                                                    WebkitMaskPosition: "center",
+                                                    maskRepeat: "no-repeat",
+                                                    WebkitMaskRepeat: "no-repeat",
+                                                    maskSize: "contain",
+                                                    WebkitMaskSize: "contain",
+                                                }}
+                                            />
                                         ) : null}
                                         {learning && (
                                             <span
