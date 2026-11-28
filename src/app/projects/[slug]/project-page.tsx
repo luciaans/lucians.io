@@ -345,7 +345,7 @@ function Story({ blocks, still }: { blocks: StoryBlock[]; still: boolean }) {
                             height={block.height}
                             sizes="(min-width: 1024px) 40rem, 100vw"
                             quality={IMAGE_QUALITY}
-                            className="my-6 h-auto w-full rounded-[6px] border border-[color-mix(in_srgb,var(--foreground-color)_10%,transparent)]"
+                            className={`my-6 h-auto w-full rounded-[6px] border border-[color-mix(in_srgb,var(--foreground-color)_10%,transparent)] ${block.width < block.height ? "mx-auto max-w-[22rem]" : ""}`}
                         />
                     );
                 }

@@ -321,12 +321,26 @@ export const projects: Project[] = [
                         "The home screen brings together the daily calorie target, calories remaining, today's weight, and your current streak. A goal ring and short contextual tips make the day's progress easy to scan.",
                     ],
                 },
+                {
+                    kind: "image",
+                    src: "/projects/scaleup-dashboard.png",
+                    alt: "ScaleUp dashboard with the daily calorie target, streak, cat companion, and weight summary for a demo profile.",
+                    width: 390,
+                    height: 844,
+                },
                 { kind: "heading", text: "Weight tracking" },
                 {
                     kind: "text",
                     parts: [
                         "Record weight once per day, add an optional note, and follow the trend in 7-day, 30-day, 90-day, or all-time charts. A 7-day moving average helps put daily changes in context.",
                     ],
+                },
+                {
+                    kind: "image",
+                    src: "/projects/scaleup-weight.png",
+                    alt: "ScaleUp weight tracking screen showing the current weight and trend chart for a demo profile.",
+                    width: 390,
+                    height: 844,
                 },
                 { kind: "heading", text: "Calories and meals" },
                 {
@@ -335,12 +349,26 @@ export const projects: Project[] = [
                         "Log meals under breakfast, lunch, dinner, or snacks using a searchable library of 92 Indonesian foods and drinks. Favorites, recent foods, custom entries, serving sizes, macro progress, and copy-from-yesterday make daily logging quicker.",
                     ],
                 },
+                {
+                    kind: "image",
+                    src: "/projects/scaleup-calories.png",
+                    alt: "ScaleUp calorie tracker with macro progress and meal sections for a demo profile.",
+                    width: 390,
+                    height: 844,
+                },
                 { kind: "heading", text: "Goals and nutrition targets" },
                 {
                     kind: "text",
                     parts: [
                         "Set a weight goal and activity level to get an estimated calorie target and goal timeline. ScaleUp applies built-in limits to its calculations and automatically recalculates the target when recorded weight changes by 2 kg or more.",
                     ],
+                },
+                {
+                    kind: "image",
+                    src: "/projects/scaleup-profile.png",
+                    alt: "ScaleUp profile showing activity level, calculated nutrition targets, and the active weight goal for a demo profile.",
+                    width: 390,
+                    height: 844,
                 },
                 { kind: "heading", text: "A little encouragement" },
                 {
