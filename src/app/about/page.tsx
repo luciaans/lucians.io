@@ -83,6 +83,29 @@ export default function AboutPage() {
                         <div className="flex flex-col gap-2.5 font-geistMono text-[13px] opacity-85">
                             <NowPlaying />
                         </div>
+
+                        {/* Social links */}
+                        <div className="pt-1">
+                            <p className="mb-3 font-geistMono text-[12px] uppercase tracking-wider opacity-50">
+                                Connect
+                            </p>
+                            <div className="flex flex-wrap items-center gap-x-5 gap-y-2.5 font-geistMono text-[14px]">
+                                {SOCIALS.map(({ label, href, icon: Icon }) => (
+                                    <a
+                                        key={label}
+                                        href={href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 opacity-65 transition-opacity hover:opacity-100"
+                                    >
+                                        <Icon size={16} weight="bold" />
+                                        <span className="underline decoration-1 underline-offset-[5px] decoration-[color-mix(in_srgb,var(--foreground-color)_35%,transparent)] hover:decoration-foreground">
+                                            {label}
+                                        </span>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
                     </motion.div>
 
                     {/* Right Column: Bio Narrative */}
@@ -90,7 +113,7 @@ export default function AboutPage() {
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.1 }}
-                        className="flex flex-col justify-between gap-6 font-geistSans lg:col-span-7"
+                        className="flex flex-col gap-6 font-geistSans lg:col-span-7"
                     >
                         <div className="border border-[color-mix(in_srgb,var(--foreground-color)_12%,transparent)] bg-[color-mix(in_srgb,var(--foreground-color)_3%,transparent)] p-4">
                             <p className="mb-4 border-b border-[color-mix(in_srgb,var(--foreground-color)_8%,transparent)] pb-2 font-geistMono text-[11px] opacity-50">
@@ -127,29 +150,6 @@ export default function AboutPage() {
                                     appreciation across diverse genres, artists, and discographies. Music is my constant
                                     companion and creative catalyst for focus and flow state while coding.
                                 </p>
-                            </div>
-                        </div>
-
-                        {/* Social links row */}
-                        <div className="pt-2">
-                            <p className="font-geistMono text-[12px] uppercase tracking-wider opacity-50 mb-3">
-                                Connect
-                            </p>
-                            <div className="flex flex-wrap items-center gap-x-5 gap-y-2.5 font-geistMono text-[14px]">
-                                {SOCIALS.map(({ label, href, icon: Icon }) => (
-                                    <a
-                                        key={label}
-                                        href={href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1.5 opacity-65 transition-opacity hover:opacity-100"
-                                    >
-                                        <Icon size={16} weight="bold" />
-                                        <span className="underline decoration-1 underline-offset-[5px] decoration-[color-mix(in_srgb,var(--foreground-color)_35%,transparent)] hover:decoration-foreground">
-                                            {label}
-                                        </span>
-                                    </a>
-                                ))}
                             </div>
                         </div>
                     </motion.div>
