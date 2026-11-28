@@ -65,20 +65,17 @@ export default function MobileNav({ isLight, toggleTheme }: MobileNavProps) {
     const fgDim = isLight ? "rgba(38,37,35,0.35)" : "rgba(255,247,240,0.35)";
     const fgIcon = isLight ? "rgba(38,37,35,0.5)" : "rgba(255,247,240,0.5)";
     const bg = isLight ? "#f5f4f1" : "#1a1917";
-    const pillBg = isLight ? "rgba(38,37,35,0.06)" : "rgba(255,247,240,0.06)";
-
     return (
         <>
             {/* Single persistent pill — always on top */}
-            <div className="fixed left-3 right-3 top-[max(12px,env(safe-area-inset-top))] z-50 sm:left-6 sm:right-6">
+            <div className="fixed top-[max(12px,env(safe-area-inset-top))] z-50 [left:max(12px,env(safe-area-inset-left))] [right:max(12px,env(safe-area-inset-right))] sm:[left:max(24px,env(safe-area-inset-left))] sm:[right:max(24px,env(safe-area-inset-right))]">
                 <button
                     type="button"
                     onClick={() => setOpen((v) => !v)}
                     aria-label={open ? "Close navigation" : "Open navigation"}
                     aria-expanded={open}
                     aria-controls="mobile-navigation"
-                    className="flex min-h-12 w-full cursor-pointer items-center justify-between rounded-full px-5 py-3 sm:px-6"
-                    style={{ background: pillBg, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
+                    className="nav-glass flex min-h-12 w-full cursor-pointer items-center justify-between rounded-full px-5 py-3 sm:px-6"
                 >
                     <span className="font-inter text-[18px] font-normal tracking-normal" style={{ color: fg }}>
                         {currentLabel}

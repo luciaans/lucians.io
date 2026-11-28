@@ -17,7 +17,7 @@ const ITEM = "transition-opacity duration-150 hover:opacity-100 focus-visible:op
 type TopNavProps = {
     isLight: boolean;
     toggleTheme: () => void;
-    /** The nav is sitting over a dark cover image, so it uses light text whatever the theme. */
+    /** Keep the nav dark while it sits over a project cover. */
     overCover?: boolean;
 };
 
@@ -31,8 +31,12 @@ export default function TopNav({ isLight, toggleTheme, overCover = false }: TopN
             data-koi-avoid
             aria-label="Main"
             // Named for view transitions, so the nav stays in place instead of fading out with the rest of the page.
-            className={`fixed inset-x-0 top-0 z-30 flex items-center justify-center gap-8 pt-8 font-geistMono text-[13px] lowercase transition-colors duration-200 [view-transition-name:site-nav] ${
-                overCover ? "text-dark-foreground" : "text-foreground"
+            className={`fixed inset-x-0 top-0 z-50 flex h-20 items-center justify-center gap-8 font-geistMono text-[13px] lowercase transition-colors duration-200 [view-transition-name:site-nav] ${
+                overCover
+                    ? "bg-dark-background text-dark-foreground"
+                    : isLight
+                      ? "bg-light-background text-light-foreground"
+                      : "bg-dark-background text-dark-foreground"
             }`}
         >
             {LINKS.map(({ label, href }) => (

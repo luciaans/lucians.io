@@ -2,7 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-padding-top: 5rem;
+}
+
 @layer components {
+    .nav-glass {
+        background-color: var(--background-color);
+    }
+    @supports (backdrop-filter: blur(12px)) {
+        .nav-glass {
+            background-color: color-mix(in srgb, var(--background-color) 88%, transparent);
+            backdrop-filter: blur(12px);
+        }
+    }
+
     /*
      * When a citation is hovered or focused, the rest of the prose steps back so
      * the mention is the only lit thing on the line. That contrast is what makes

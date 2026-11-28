@@ -11,56 +11,15 @@ import { GithubLogoIcon } from "@phosphor-icons/react/dist/csr/GithubLogo";
 import { LinkedinLogoIcon } from "@phosphor-icons/react/dist/csr/LinkedinLogo";
 import { DiscordLogoIcon } from "@phosphor-icons/react/dist/csr/DiscordLogo";
 import { InstagramLogoIcon } from "@phosphor-icons/react/dist/csr/InstagramLogo";
-import { TerminalIcon } from "@phosphor-icons/react/dist/csr/Terminal";
-import { CodeIcon } from "@phosphor-icons/react/dist/csr/Code";
-import { SparkleIcon } from "@phosphor-icons/react/dist/csr/Sparkle";
 import NowPlaying from "../components/now-playing/NowPlaying";
+import QuotePanel from "./quote-panel";
+import Toolkit from "./toolkit";
 
 const SOCIALS = [
     { label: "GitHub", href: "https://github.com/luciaans", icon: GithubLogoIcon },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/kikialqadrie/", icon: LinkedinLogoIcon },
     { label: "Discord", href: "https://discord.com/users/867236993683816458", icon: DiscordLogoIcon },
     { label: "Instagram", href: "https://www.instagram.com/kikiinyaa/", icon: InstagramLogoIcon },
-];
-
-const SKILLS = [
-    {
-        category: "Languages",
-        items: ["Rust", "TypeScript", "JavaScript", "Python", "SQL", "HTML / CSS"],
-    },
-    {
-        category: "Frameworks & Web",
-        items: ["Next.js", "React", "Node.js", "Express", "Tailwind CSS"],
-    },
-    {
-        category: "Data & Systems",
-        items: ["PostgreSQL", "Supabase", "GeoJSON", "Leaflet.js", "Data Analytics"],
-    },
-    {
-        category: "Tools & Workflow",
-        items: ["Git", "GitHub", "Linux", "Docker", "Vite", "Vercel"],
-    },
-];
-
-const PRINCIPLES = [
-    {
-        number: "01",
-        title: "Reliability First",
-        description:
-            "Write predictable, robust, and maintainable software. Systems should handle failure gracefully and stay rock solid under real-world usage.",
-    },
-    {
-        number: "02",
-        title: "Curiosity & Lower-Level Depth",
-        description:
-            "Currently deep-diving into Rust and systems programming to master memory management, concurrency, and performance from the bottom up.",
-    },
-    {
-        number: "03",
-        title: "Purpose-Driven Engineering",
-        description:
-            "From public-sector statistical dashboards to registered interactive digital media, the priority is delivering tangible utility and clean developer experience.",
-    },
 ];
 
 export default function AboutPage() {
@@ -101,7 +60,7 @@ export default function AboutPage() {
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="flex flex-col gap-5 lg:col-span-5"
+                        className="flex flex-col items-start gap-5 lg:col-span-5"
                     >
                         <div className="group relative aspect-square w-full max-w-[22rem] overflow-hidden rounded-[8px] border border-[color-mix(in_srgb,var(--foreground-color)_12%,transparent)] bg-[color-mix(in_srgb,var(--foreground-color)_4%,transparent)]">
                             <Image
@@ -117,6 +76,8 @@ export default function AboutPage() {
                             {/* Subtle overlay gradient */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[rgb(0_0_0/0.4)] via-transparent to-transparent opacity-60" />
                         </div>
+
+                        <QuotePanel />
 
                         {/* Now playing */}
                         <div className="flex flex-col gap-2.5 font-geistMono text-[13px] opacity-85">
@@ -191,70 +152,7 @@ export default function AboutPage() {
                     </motion.div>
                 </section>
 
-                {/* Skills / Tech Stack */}
-                <section aria-label="Skills & Technologies" className="flex flex-col gap-6">
-                    <div className="flex items-center gap-2 font-geistMono text-[13px] uppercase tracking-wider opacity-60">
-                        <TerminalIcon size={16} weight="bold" />
-                        <h2>Technical Toolkit</h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                        {SKILLS.map((skillGroup, idx) => (
-                            <motion.div
-                                key={skillGroup.category}
-                                initial={{ opacity: 0, y: 12 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.35, delay: idx * 0.06 }}
-                                className="flex flex-col gap-3 rounded-[6px] border border-[color-mix(in_srgb,var(--foreground-color)_10%,transparent)] bg-[color-mix(in_srgb,var(--foreground-color)_3%,transparent)] p-4 font-geistMono"
-                            >
-                                <span className="text-[12px] font-medium text-[var(--muted-color)]">
-                                    {skillGroup.category}
-                                </span>
-                                <div className="flex flex-wrap gap-1.5">
-                                    {skillGroup.items.map((item) => (
-                                        <span
-                                            key={item}
-                                            className="rounded bg-[color-mix(in_srgb,var(--foreground-color)_7%,transparent)] px-2 py-0.5 text-[12px] opacity-85"
-                                        >
-                                            {item}
-                                        </span>
-                                    ))}
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </section>
-
-                {/* Engineering Philosophy */}
-                <section aria-label="Engineering Philosophy" className="flex flex-col gap-6">
-                    <div className="flex items-center gap-2 font-geistMono text-[13px] uppercase tracking-wider opacity-60">
-                        <CodeIcon size={16} weight="bold" />
-                        <h2>Engineering Philosophy</h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-                        {PRINCIPLES.map((principle, idx) => (
-                            <motion.article
-                                key={principle.number}
-                                initial={{ opacity: 0, y: 12 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.35, delay: idx * 0.08 }}
-                                className="flex flex-col gap-2 rounded-[6px] border border-[color-mix(in_srgb,var(--foreground-color)_10%,transparent)] p-5"
-                            >
-                                <div className="flex items-center justify-between font-geistMono">
-                                    <span className="text-[12px] opacity-40">{principle.number}</span>
-                                    <SparkleIcon size={14} weight="bold" className="opacity-30" />
-                                </div>
-                                <h3 className="font-geistMono text-[15px] font-medium tracking-tight text-foreground">
-                                    {principle.title}
-                                </h3>
-                                <p className="font-geistSans text-[14px] leading-relaxed text-[var(--muted-color)] [text-wrap:pretty]">
-                                    {principle.description}
-                                </p>
-                            </motion.article>
-                        ))}
-                    </div>
-                </section>
+                <Toolkit />
             </Container>
         </div>
     );

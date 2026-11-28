@@ -84,7 +84,7 @@ export default function ProjectPage({ slug }: { slug: string }) {
     useEffect(() => {
         const cover = coverRef.current;
         if (!hasCover || !cover) return;
-        const update = () => setOverCover(cover.getBoundingClientRect().bottom > 56);
+        const update = () => setOverCover(cover.getBoundingClientRect().bottom > 80);
         update();
         window.addEventListener("scroll", update, { passive: true });
         window.addEventListener("resize", update);
