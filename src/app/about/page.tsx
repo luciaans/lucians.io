@@ -11,7 +11,6 @@ import { GithubLogoIcon } from "@phosphor-icons/react/dist/csr/GithubLogo";
 import { LinkedinLogoIcon } from "@phosphor-icons/react/dist/csr/LinkedinLogo";
 import { DiscordLogoIcon } from "@phosphor-icons/react/dist/csr/DiscordLogo";
 import { InstagramLogoIcon } from "@phosphor-icons/react/dist/csr/InstagramLogo";
-import NowPlaying from "../components/now-playing/NowPlaying";
 import QuotePanel from "./quote-panel";
 import Toolkit from "./toolkit";
 
@@ -78,11 +77,6 @@ export default function AboutPage() {
                         </div>
 
                         <QuotePanel />
-
-                        {/* Now playing */}
-                        <div className="flex flex-col gap-2.5 font-geistMono text-[13px] opacity-85">
-                            <NowPlaying />
-                        </div>
 
                         {/* Social links */}
                         <div className="pt-1">
