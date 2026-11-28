@@ -25,7 +25,10 @@ import {
     type SimpleIcon,
 } from "simple-icons";
 
-const GROUPS: { label: string; items: { name: string; icon: SimpleIcon; learning?: boolean; neutralHover?: boolean }[] }[] = [
+const GROUPS: {
+    label: string;
+    items: { name: string; icon: SimpleIcon; learning?: boolean; neutralHover?: boolean }[];
+}[] = [
     {
         label: "languages",
         items: [
