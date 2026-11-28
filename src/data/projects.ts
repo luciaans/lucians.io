@@ -296,6 +296,18 @@ export const projects: Project[] = [
             ],
         },
     },
+    {
+        index: "04",
+        slug: "scaleup",
+        name: "ScaleUp",
+        description:
+            "An offline-first Flutter app for tracking weight, calories, meals, and health goals, with a meme cat companion.",
+        tech: ["Flutter", "Dart", "Riverpod", "SQLite (Drift)"],
+        year: "2026",
+        link: "https://github.com/luciaans/ScaleUp",
+        linkLabel: "View source on GitHub",
+        thumb: "/projects/scaleup-cover.png",
+    },
 ];
 
 const SEASONS = ["Winter", "Spring", "Summer", "Fall"];
