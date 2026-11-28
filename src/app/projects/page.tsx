@@ -224,7 +224,7 @@ function MobileLayout({ isLight, toggleTheme }: { isLight: boolean; toggleTheme:
                         />
                     </p>
                     <p className="max-w-[32rem] font-geistSans text-[16px] leading-[1.6] opacity-80 [text-wrap:pretty]">
-                        Selected projects in data analytics, software engineering, and modern development.
+                        A collection of work shaped by curiosity, thoughtful problem-solving, and continued learning.
                     </p>
                 </header>
 

@@ -42,8 +42,7 @@ export default function Credentials() {
                             />
                         </p>
                         <p className="max-w-[32rem] font-geistSans text-[16px] leading-[1.6] opacity-80 [text-wrap:pretty]">
-                            Verified certifications, registered intellectual property (HKI), and professional
-                            internships.
+                            A record of experiences and progress throughout my professional journey.
                         </p>
                     </div>
 

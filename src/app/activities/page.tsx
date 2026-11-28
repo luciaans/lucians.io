@@ -31,8 +31,7 @@ export default function Activities() {
                         />
                     </p>
                     <p className="max-w-[32rem] font-geistSans text-[16px] leading-[1.6] opacity-80 [text-wrap:pretty]">
-                        A timeline of professional experience, community projects, certifications, and academic
-                        achievements.
+                        A look at the experiences and milestones that continue to shape my path.
                     </p>
                 </header>
 
