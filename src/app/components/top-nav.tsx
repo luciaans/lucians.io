@@ -19,12 +19,19 @@ type TopNavProps = {
     toggleTheme: () => void;
     /** Keep the nav dark while it sits over a project cover. */
     overCover?: boolean;
+    /** Let the koi pond show through on the home page. */
+    transparent?: boolean;
 };
 
-export default function TopNav({ isLight, toggleTheme, overCover = false }: TopNavProps) {
+export default function TopNav({ isLight, toggleTheme, overCover = false, transparent = false }: TopNavProps) {
     const pathname = usePathname();
     // A project's own page still counts as being in projects.
     const active = (href: string) => pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
+    const theme = overCover
+        ? "bg-dark-background text-dark-foreground"
+        : isLight
+          ? "bg-light-background text-light-foreground"
+          : "bg-dark-background text-dark-foreground";
 
     return (
         <nav
@@ -32,11 +39,7 @@ export default function TopNav({ isLight, toggleTheme, overCover = false }: TopN
             aria-label="Main"
             // Named for view transitions, so the nav stays in place instead of fading out with the rest of the page.
             className={`fixed inset-x-0 top-0 z-50 flex h-20 items-center justify-center gap-8 font-geistMono text-[13px] lowercase transition-colors duration-200 [view-transition-name:site-nav] ${
-                overCover
-                    ? "bg-dark-background text-dark-foreground"
-                    : isLight
-                      ? "bg-light-background text-light-foreground"
-                      : "bg-dark-background text-dark-foreground"
+                transparent ? "bg-transparent text-foreground" : theme
             }`}
         >
             {LINKS.map(({ label, href }) => (

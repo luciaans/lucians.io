@@ -34,7 +34,7 @@ export default function Home() {
             {isMobile ? (
                 <MobileNav isLight={isLight} toggleTheme={toggleTheme} />
             ) : (
-                <TopNav isLight={isLight} toggleTheme={toggleTheme} />
+                <TopNav isLight={isLight} toggleTheme={toggleTheme} transparent />
             )}
             <main className="relative z-20 flex h-full flex-col">
                 <FrontPage isLight={isLight} stats={stats} />
