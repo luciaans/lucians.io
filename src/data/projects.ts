@@ -411,6 +411,13 @@ export const projects: Project[] = [
                         "The dashboard summarizes active students, classes, and the day's attendance so staff can quickly see which records still need attention.",
                     ],
                 },
+                {
+                    kind: "image",
+                    src: "/projects/mutabaah-overview.png",
+                    alt: "MUTABA’AH daily overview with prayer statistics, recent activity, and attendance reminders.",
+                    width: 1897,
+                    height: 980,
+                },
                 { kind: "heading", text: "Prayer attendance" },
                 {
                     kind: "text",
