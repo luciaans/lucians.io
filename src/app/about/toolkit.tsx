@@ -124,8 +124,8 @@ export default function Toolkit() {
                                                 aria-hidden="true"
                                                 className="h-5 w-5 bg-current"
                                                 style={{
-                                                    maskImage: "url('/toolkit/orca-mark.png')",
-                                                    WebkitMaskImage: "url('/toolkit/orca-mark.png')",
+                                                    maskImage: "url('/toolkit/orca-mark.svg')",
+                                                    WebkitMaskImage: "url('/toolkit/orca-mark.svg')",
                                                     maskPosition: "center",
                                                     WebkitMaskPosition: "center",
                                                     maskRepeat: "no-repeat",
