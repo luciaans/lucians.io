@@ -306,7 +306,30 @@ export const projects: Project[] = [
         year: "2026",
         link: "https://github.com/luciaans/ScaleUp",
         linkLabel: "View source on GitHub",
-        thumb: "/projects/scaleup-cover.png",
+        thumb: "/projects/scaleup-showcase.jpg",
+        page: {
+            tagline: "An offline-first health tracker for weight, calories, meals, and everyday goals.",
+            about: [
+                "ScaleUp is a Flutter app for keeping everyday health goals in one place. Log meals, track calories, record weight, and follow your progress with an encouraging cat companion. Its offline-first design keeps the core tracking experience available without an internet connection.",
+            ],
+            poster: "/projects/scaleup-showcase.jpg",
+            story: [
+                { kind: "heading", text: "Track daily progress" },
+                {
+                    kind: "text",
+                    parts: [
+                        "ScaleUp brings meal and calorie tracking together with weight records and personal goals, so daily progress is easy to review from one app.",
+                    ],
+                },
+                { kind: "heading", text: "Built to work offline" },
+                {
+                    kind: "text",
+                    parts: [
+                        "The app is built with Flutter and Dart, using Riverpod for state management and Drift with SQLite for local data storage.",
+                    ],
+                },
+            ],
+        },
     },
 ];
 
