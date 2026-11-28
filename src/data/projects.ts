@@ -314,18 +314,46 @@ export const projects: Project[] = [
             ],
             poster: "/projects/scaleup-showcase.jpg",
             story: [
-                { kind: "heading", text: "Track daily progress" },
+                { kind: "heading", text: "Daily dashboard" },
                 {
                     kind: "text",
                     parts: [
-                        "ScaleUp brings meal and calorie tracking together with weight records and personal goals, so daily progress is easy to review from one app.",
+                        "The home screen brings together the daily calorie target, calories remaining, today's weight, and your current streak. A goal ring and short contextual tips make the day's progress easy to scan.",
                     ],
                 },
-                { kind: "heading", text: "Built to work offline" },
+                { kind: "heading", text: "Weight tracking" },
                 {
                     kind: "text",
                     parts: [
-                        "The app is built with Flutter and Dart, using Riverpod for state management and Drift with SQLite for local data storage.",
+                        "Record weight once per day, add an optional note, and follow the trend in 7-day, 30-day, 90-day, or all-time charts. A 7-day moving average helps put daily changes in context.",
+                    ],
+                },
+                { kind: "heading", text: "Calories and meals" },
+                {
+                    kind: "text",
+                    parts: [
+                        "Log meals under breakfast, lunch, dinner, or snacks using a searchable library of 92 Indonesian foods and drinks. Favorites, recent foods, custom entries, serving sizes, macro progress, and copy-from-yesterday make daily logging quicker.",
+                    ],
+                },
+                { kind: "heading", text: "Goals and nutrition targets" },
+                {
+                    kind: "text",
+                    parts: [
+                        "Set a weight goal and activity level to get an estimated calorie target and goal timeline. ScaleUp applies built-in limits to its calculations and automatically recalculates the target when recorded weight changes by 2 kg or more.",
+                    ],
+                },
+                { kind: "heading", text: "A little encouragement" },
+                {
+                    kind: "text",
+                    parts: [
+                        "Mochi Neko, the meme cat companion, reacts to check-ins and streaks. Daily reminders and milestone celebrations help make tracking feel less like a chore.",
+                    ],
+                },
+                { kind: "heading", text: "Offline-first by design" },
+                {
+                    kind: "text",
+                    parts: [
+                        "Profiles, weight entries, and meals are stored locally in SQLite, with no account required. Built with Flutter and Dart, with Riverpod for state management and Drift for local database access; data can also be exported to CSV.",
                     ],
                 },
             ],
