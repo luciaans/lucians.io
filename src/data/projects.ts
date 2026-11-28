@@ -149,7 +149,7 @@ export const projects: Project[] = [
         year: "2025",
         link: "https://poniva-diskominfo-ptk.vercel.app/",
         linkLabel: "Visit live PONIVA ↗",
-        thumb: "/projects/poniva-live-preview.webp",
+        thumb: "/projects/poniva-showcase.jpg",
         page: {
             tagline: "An interactive demographic dashboard for exploring Pontianak's population data.",
             about: [
@@ -210,7 +210,7 @@ export const projects: Project[] = [
         year: "2025",
         link: "https://website-gallery-desa-kalimas.vercel.app/",
         linkLabel: "Visit live village website ↗",
-        thumb: "/projects/kalimas-manual-home.webp",
+        thumb: "/projects/kalimas-showcase.jpg",
         page: {
             tagline: "Discover the stories, people, and places that make up Desa Kalimas.",
             about: [
