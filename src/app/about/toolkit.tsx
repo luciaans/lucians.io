@@ -32,7 +32,7 @@ const GROUPS: {
     {
         label: "languages",
         items: [
-            { name: "Rust", icon: siRust, learning: true },
+            { name: "Rust", icon: siRust, learning: true, neutralHover: true },
             { name: "TypeScript", icon: siTypescript },
             { name: "JavaScript", icon: siJavascript },
             { name: "Python", icon: siPython },
@@ -83,22 +83,27 @@ export default function Toolkit() {
                 {GROUPS.map((group) => (
                     <div key={group.label}>
                         <p className="mb-3 font-geistMono text-[11px] opacity-45">// {group.label}</p>
-                        <div className="grid grid-cols-3 gap-x-3 gap-y-4 sm:grid-cols-4 lg:flex lg:flex-wrap lg:gap-x-5">
+                        <div className="flex flex-wrap gap-x-5 gap-y-2">
                             {group.items.map(({ name, icon, learning, neutralHover }) => (
                                 <span
                                     key={name}
                                     role="img"
                                     tabIndex={0}
                                     aria-label={learning ? `${name}, learning` : name}
-                                    className={`group relative flex min-h-[4.5rem] w-full flex-col items-center justify-start gap-1 rounded-sm outline-none transition-colors focus-visible:ring-1 focus-visible:ring-foreground lg:w-[5.5rem] ${
+                                    className={`group inline-flex min-h-8 items-center gap-2 rounded-sm outline-none transition-colors focus-visible:ring-1 focus-visible:ring-foreground ${
                                         neutralHover
                                             ? "hover:text-foreground focus-visible:text-foreground"
                                             : "hover:text-[var(--brand-color)] focus-visible:text-[var(--brand-color)]"
                                     }`}
                                     style={{ "--brand-color": `#${icon.hex}` } as CSSProperties}
                                 >
-                                    <span className="relative">
-                                        <svg aria-hidden="true" viewBox="0 0 24 24" className="h-9 w-9 fill-current">
+                                    <span className="relative inline-flex shrink-0">
+                                        <svg
+                                            aria-hidden="true"
+                                            viewBox="0 0 24 24"
+                                            className="h-5 w-5"
+                                            style={{ fill: "currentColor" }}
+                                        >
                                             <path d={icon.path} />
                                         </svg>
                                         {learning && (
@@ -109,9 +114,7 @@ export default function Toolkit() {
                                             />
                                         )}
                                     </span>
-                                    <span className="text-center font-geistMono text-[10px] leading-tight opacity-70 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100 [@media(hover:hover)]:group-focus-visible:opacity-100">
-                                        {name}
-                                    </span>
+                                    <span className="font-geistMono text-[12px] leading-none opacity-75">{name}</span>
                                 </span>
                             ))}
                         </div>
