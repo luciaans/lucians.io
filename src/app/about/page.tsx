@@ -47,8 +47,8 @@ export default function AboutPage() {
                         />
                     </p>
                     <p className="max-w-[38rem] font-geistSans text-[16px] leading-[1.6] opacity-80 [text-wrap:pretty]">
-                        Software engineer and Informatics Engineering graduate focused on systems development, Rust, and
-                        building reliable digital tools.
+                        Software engineer and Informatics Engineering graduate focused on building reliable digital
+                        tools.
                     </p>
                 </header>
 
