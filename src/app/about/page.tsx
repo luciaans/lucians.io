@@ -96,8 +96,8 @@ export default function AboutPage() {
                             <p className="mb-4 border-b border-[color-mix(in_srgb,var(--foreground-color)_8%,transparent)] pb-2 font-geistMono text-[11px] opacity-50">
                                 ~/lucians $ cat about.txt
                             </p>
-                            <div className="flex flex-col gap-5 text-justify text-[15px] leading-[1.75] opacity-85 [text-wrap:pretty]">
-                                <p>
+                            <div className="flex flex-col divide-y divide-[color-mix(in_srgb,var(--foreground-color)_10%,transparent)] text-left text-[15px] leading-[1.75] opacity-85 [text-wrap:pretty] xl:text-justify">
+                                <p className="py-4 first:pt-0 last:pb-0">
                                     Hi, I&apos;m{" "}
                                     <strong className="font-semibold text-foreground">
                                         Sayyid M. Rizqi R. Al Qadrie
@@ -108,7 +108,7 @@ export default function AboutPage() {
                                     an Informatics Engineering graduate with a primary focus on Software Engineering and
                                     Systems Development.
                                 </p>
-                                <p>
+                                <p className="py-4 first:pt-0 last:pb-0">
                                     During my academic journey at Universitas Muhammadiyah Pontianak (graduating with a
                                     3.83/4.00 GPA), I developed a solid foundation in software architecture, algorithmic
                                     problem solving, and data analytics. I interned at{" "}
@@ -116,13 +116,13 @@ export default function AboutPage() {
                                     (Sectoral Statistics Division), where I built interactive demographic visualization
                                     dashboards and public-facing data platforms.
                                 </p>
-                                <p>
+                                <p className="py-4 first:pt-0 last:pb-0">
                                     Currently, I am diving deep into{" "}
                                     <strong className="font-medium text-foreground">Rust</strong> and systems-level
                                     programming—exploring memory safety, zero-cost abstractions, and concurrency
                                     alongside modern web technologies like Next.js and React.
                                 </p>
-                                <p>
+                                <p className="py-4 first:pt-0 last:pb-0">
                                     Outside of building systems, I am an avid music listener with an extensive
                                     appreciation across diverse genres, artists, and discographies. Music is my constant
                                     companion and creative catalyst for focus and flow state while coding.
